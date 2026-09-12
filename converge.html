@@ -1,0 +1,414 @@
+<title>西宁集结方案</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700;900&family=Noto+Sans+SC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bj:#C8542F; --wh:#B3941F; --nj:#2F8E88; --hub:#4A6E9C;
+  --bg:#F2F4F2; --bg2:#FFFFFF; --sunk:#E5EAE7;
+  --ink:#0F1A1C; --ink2:#42565A; --ink3:#70878A;
+  --line:#CBD6D3; --line2:#DEE6E3;
+  --accent:#B04527; --mapbg:#E2E8E4; --grat:#CAD6D1;
+  --stop:#B04527; --warn:#8C6112; --win:#1B7268;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bj:#E2673E; --wh:#D9B440; --nj:#4FB6B0; --hub:#6C9BD1;
+  --bg:#0B1214; --bg2:#121D20; --sunk:#0A1113;
+  --ink:#E9F1EF; --ink2:#A6BBB9; --ink3:#6F8A88;
+  --line:#26383B; --line2:#1C2C2F;
+  --accent:#E2673E; --mapbg:#08100F; --grat:#1B2D2F;
+  --stop:#E2673E; --warn:#D9A63C; --win:#4FB6B0;
+}}
+:root[data-theme="dark"]{
+  --bj:#E2673E; --wh:#D9B440; --nj:#4FB6B0; --hub:#6C9BD1;
+  --bg:#0B1214; --bg2:#121D20; --sunk:#0A1113;
+  --ink:#E9F1EF; --ink2:#A6BBB9; --ink3:#6F8A88;
+  --line:#26383B; --line2:#1C2C2F;
+  --accent:#E2673E; --mapbg:#08100F; --grat:#1B2D2F;
+  --stop:#E2673E; --warn:#D9A63C; --win:#4FB6B0;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:"Noto Sans SC","PingFang SC",sans-serif;
+  font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1240px;margin:0 auto;padding:0 26px 100px}
+.mono{font-family:"IBM Plex Mono",Menlo,monospace;font-variant-numeric:tabular-nums}
+h1,h2,h3{font-family:"Noto Serif SC","Songti SC",serif;margin:0;text-wrap:balance}
+
+.mast{padding:52px 0 0}
+.kick{display:flex;flex-wrap:wrap;border:1px solid var(--line);border-radius:3px;overflow:hidden;margin-bottom:26px}
+.kick span{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.13em;padding:7px 14px;
+  color:var(--ink3);border-right:1px solid var(--line)}
+.kick span:last-child{border-right:0}
+.kick span.on{background:var(--accent);color:#fff;font-weight:600}
+h1{font-size:clamp(38px,6vw,68px);font-weight:900;letter-spacing:-.02em;line-height:1}
+.dek{font-size:16px;color:var(--ink2);max-width:62ch;margin:18px 0 0}
+.dek b{color:var(--ink);font-weight:500}
+.rail{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));margin:32px 0 0;
+  border:1px solid var(--line);border-radius:3px;overflow:hidden;background:var(--bg2)}
+.rail div{padding:16px 18px;border-right:1px solid var(--line2)}
+.rail div:last-child{border-right:0}
+.rail .k{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.16em;color:var(--ink3)}
+.rail .v{font-family:"IBM Plex Mono",monospace;font-size:25px;font-weight:600;margin-top:5px;letter-spacing:-.02em}
+.rail .n{font-size:12px;color:var(--ink3)}
+
+section{margin-top:64px}
+.sh{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--ink);padding-bottom:9px;margin-bottom:24px}
+.sh .no{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.14em;color:var(--accent)}
+.sh h2{font-size:24px;font-weight:700}
+.sh .nt{margin-left:auto;font-size:12.5px;color:var(--ink3)}
+
+.hero{border:1px solid var(--line);border-left:5px solid var(--accent);background:var(--bg2);padding:22px 26px;border-radius:3px}
+.hero h3{font-size:20px;font-weight:700;line-height:1.5}
+.hero p{margin:9px 0 0;font-size:14.5px;color:var(--ink2)}
+
+.mapwrap{border:1px solid var(--line);border-radius:3px;overflow:hidden;background:var(--mapbg)}
+.mapwrap svg{display:block;width:100%;height:auto}
+
+/* person cards */
+.people{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:16px}
+.pc{border:1px solid var(--line);border-top:4px solid var(--c);border-radius:3px;background:var(--bg2);padding:0;overflow:hidden}
+.pc .ph{padding:16px 20px 13px;border-bottom:1px solid var(--line2);display:flex;align-items:center;gap:11px}
+.pc .av{width:34px;height:34px;border-radius:4px;background:var(--c);color:#fff;display:grid;place-items:center;
+  font-family:"Noto Serif SC",serif;font-weight:700;font-size:15px;flex:none}
+.pc .nm{font-family:"Noto Serif SC",serif;font-size:18px;font-weight:700;line-height:1.2}
+.pc .sub{font-size:11.5px;color:var(--ink3);font-family:"IBM Plex Mono",monospace}
+.pc .tot{margin-left:auto;text-align:right}
+.pc .tot b{font-family:"IBM Plex Mono",monospace;font-size:20px;font-weight:600;display:block;line-height:1.1}
+.pc .tot i{font-style:normal;font-size:10.5px;color:var(--ink3);font-family:"IBM Plex Mono",monospace}
+.leg{padding:14px 20px;border-bottom:1px solid var(--line2)}
+.leg:last-child{border-bottom:0}
+.leg .lb{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.14em;color:var(--ink3);margin-bottom:6px}
+.leg .lb em{font-style:normal;color:var(--c);font-weight:600}
+.leg .rt{font-size:14.5px;font-weight:500;line-height:1.6}
+.leg .rt code{font-family:"IBM Plex Mono",monospace;background:var(--sunk);padding:1px 5px;border-radius:2px;font-size:13px}
+.leg .pz{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ink2);margin-top:4px}
+.leg .alt{font-size:12.5px;color:var(--ink3);margin-top:8px;padding-top:8px;border-top:1px dashed var(--line);line-height:1.65}
+.leg .alt b{color:var(--ink2);font-weight:500}
+
+/* timeline of arrival */
+.arr{border:1px solid var(--line);border-radius:3px;background:var(--bg2);overflow:hidden}
+.arr .row{display:grid;grid-template-columns:92px 1fr;gap:18px;padding:15px 20px;border-bottom:1px solid var(--line2);align-items:center}
+.arr .row:last-child{border-bottom:0}
+.arr .tm{font-family:"IBM Plex Mono",monospace;font-size:20px;font-weight:600;color:var(--c)}
+.arr .who{font-size:15px;font-weight:500}
+.arr .who span{display:block;font-size:12.5px;color:var(--ink3);font-weight:400;font-family:"IBM Plex Mono",monospace;margin-top:2px}
+.arr .foot{padding:14px 20px;background:var(--sunk);font-size:13px;color:var(--ink2)}
+
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:3px;background:var(--bg2)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:13.5px}
+th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line2)}
+thead th{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.13em;color:var(--ink3);
+  font-weight:500;background:var(--sunk);border-bottom:1px solid var(--line)}
+td.n,th.n{text-align:right;font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+tr.tot td{font-weight:700;background:var(--sunk);border-top:2px solid var(--ink)}
+tr.tot td.n{font-family:"IBM Plex Mono",monospace;font-size:18px}
+.best{color:var(--win);font-weight:600}
+.bad{color:var(--stop)}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:9px;padding:1px 5px;
+  border:1px solid var(--line);border-radius:2px;color:var(--ink3);margin-left:6px}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.cd{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:19px 21px;background:var(--bg2)}
+.cd .sv{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.15em;font-weight:600;color:var(--c)}
+.cd h3{font-size:16px;font-weight:700;margin:9px 0 8px;line-height:1.45}
+.cd p{margin:0;font-size:13.5px;color:var(--ink2);line-height:1.7}
+.cd .ac{margin-top:12px;padding-top:11px;border-top:1px dashed var(--line);font-size:12.5px;color:var(--ink)}
+.cd .ac b{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.12em;color:var(--ink3);display:block;margin-bottom:3px;font-weight:500}
+
+.tl{border-left:2px solid var(--line);margin-left:9px}
+.tli{display:grid;grid-template-columns:104px 1fr;gap:20px;padding:14px 0 14px 24px;position:relative;border-bottom:1px solid var(--line2)}
+.tli:last-child{border-bottom:0}
+.tli::before{content:"";position:absolute;left:-7px;top:21px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--ink3)}
+.tli.hot::before{background:var(--accent);border-color:var(--accent)}
+.tli .dt{font-family:"IBM Plex Mono",monospace;font-size:14px;font-weight:600}
+.tli .dt span{display:block;font-size:10.5px;color:var(--ink3);font-weight:400}
+.tli .w{font-size:14.5px;font-weight:500}
+.tli .w em{font-style:normal;color:var(--ink3);font-size:12.5px;display:block;margin-top:2px;font-weight:400}
+@media(max-width:620px){.tli{grid-template-columns:1fr;gap:3px}}
+footer{margin-top:70px;padding-top:22px;border-top:2px solid var(--ink);font-size:12.5px;color:var(--ink3);line-height:1.85}
+footer b{color:var(--ink2);font-weight:500}
+</style>
+
+<div class="wrap">
+<header class="mast">
+  <div class="kick"><span>2026 国庆</span><span>5 人 · 3 座城</span><span>北京 2 · 武汉 1 · 南京 2</span>
+    <span>10-01 到齐</span><span class="on">集结方案 V1</span></div>
+  <h1>西宁集结方案</h1>
+  <p class="dek">推荐方案里 <b>5 个人全部坐火车、全部 10-01 下午抵达同一个西宁站</b>，没有一个人去机场，接站成本为零，
+    取车点就在出站层 B1。人均往返票面 <b>¥1,898</b>。所有价格为 2026-09-09 晚间实抓：机票取携程当日航班列表直飞价，
+    火车取 12306 官方接口。</p>
+  <div class="rail">
+    <div><div class="k">人均往返票面</div><div class="v">¥1,898</div><div class="n">5 人合计 ¥9,489</div></div>
+    <div><div class="k">含隐性成本</div><div class="v">¥2,473</div><div class="n">审计修正后</div></div>
+    <div><div class="k">全员到齐</div><div class="v">18:53</div><div class="n">10-01 · 西宁站</div></div>
+    <div><div class="k">接站车次</div><div class="v">0 趟</div><div class="n">全在同一个站</div></div>
+    <div><div class="k">vs 全员北京</div><div class="v">+¥325</div><div class="n">人均票面差额</div></div>
+  </div>
+</header>
+
+<section>
+  <div class="sh"><span class="no">00</span><h2>核心判断</h2><span class="nt">三条</span></div>
+  <div class="hero">
+    <h3>火车赢了，而且赢得不勉强——它比飞机更便宜，还更早到。</h3>
+    <p><b>北京</b>：G351 + 兰州西换乘，16:18 到西宁，¥867；同日最便宜的直飞 ¥1,740 且 21:40 才落地。
+      <b>武汉</b>：汉口出发经西安北换乘，16:48 到，¥697；直飞当天一律 ¥1,710 全价无折扣。
+      <b>南京</b>：G3177 一票到底 10 小时 56 分，18:53 到，¥882；直飞最便宜 ¥1,760。
+      三个城市的 10-01 直飞都处在"全价、零折扣、余票告警"的状态，火车反而是又便宜又准点的那个。</p>
+    <p style="margin-top:12px"><b>唯一无法用钱解决的冲突在返程：</b>10-08 西宁飞南京全天只有 3 班、最晚 16:15 起飞。
+      而 10-07 有 5 班——10-08 是运力收缩日。所以南京两位要么把还车压到中午赶 16:15（¥1,560/人），
+      要么 10-08 在西宁多住一晚、10-09 中午飞（¥937/人）。</p>
+  </div>
+</section>
+
+<section>
+  <div class="sh"><span class="no">01</span><h2>三城汇流</h2><span class="nt">推荐方案的实际走法</span></div>
+  <div class="mapwrap"><svg id="map" viewBox="0 0 1000 700" role="img" aria-label="三城到西宁路线示意图"></svg></div>
+</section>
+
+<section>
+  <div class="sh"><span class="no">02</span><h2>每人一张卡</h2><span class="nt">照着下单</span></div>
+  <div class="people" id="people"></div>
+</section>
+
+<section>
+  <div class="sh"><span class="no">03</span><h2>10-01 到达时刻</h2><span class="nt">全部在西宁站</span></div>
+  <div class="arr" id="arr"></div>
+</section>
+
+<section>
+  <div class="sh"><span class="no">04</span><h2>四天价格矩阵</h2><span class="nt">同一条线，早走两天差一倍</span></div>
+  <div class="tw"><table><thead><tr>
+    <th>出发地</th><th>方式</th><th class="n">09-29</th><th class="n">09-30</th><th class="n">10-01</th><th>说明</th>
+  </tr></thead><tbody id="matrix"></tbody></table></div>
+  <p style="font-size:12.5px;color:var(--ink3);margin-top:12px;max-width:80ch">
+    火车票价为国家定价（普速）或固定运价（G/D 浮动幅度小），不随日期变化，所以三天同价。机票为携程当日航班列表的<b>直飞</b>最低价，
+    不含机建燃油 ¥120/人/段。<b>10-02 的直飞实价本轮没查</b>——推荐方案是全员 10-01 坐火车到齐，10-02 用不上；需要的话我再补。
+  </p>
+</section>
+
+<section>
+  <div class="sh"><span class="no">05</span><h2>三档成本</h2><span class="nt">5 人合计 · 单位 元</span></div>
+  <div class="tw"><table><thead><tr>
+    <th>档位</th><th>去程</th><th>返程</th><th class="n">票面合计</th><th class="n">人均</th><th>代价</th>
+  </tr></thead><tbody id="tiers"></tbody></table></div>
+
+  <h3 style="font-size:17px;margin:30px 0 14px">审计：票面之外还有 ¥575/人</h3>
+  <div class="tw"><table><thead><tr>
+    <th>被漏掉的项</th><th class="n">5 人合计</th><th>依据</th>
+  </tr></thead><tbody id="hidden"></tbody></table></div>
+</section>
+
+<section>
+  <div class="sh"><span class="no">06</span><h2>六个坑</h2><span class="nt">全部来自本轮实抓</span></div>
+  <div class="cards" id="pits"></div>
+</section>
+
+<section>
+  <div class="sh"><span class="no">07</span><h2>抢票时间线</h2><span class="nt">谁、哪天、几点</span></div>
+  <div class="tl" id="tl"></div>
+</section>
+
+<footer>
+  <b>数据来源</b>　机票：携程当日航班列表页直飞实价，抓取 2026-09-09 21:30–22:10 CST（价格日历的最低价基本是长时间中转组合票，已剔除）。
+  火车：12306 官方 leftTicket / queryTicketPrice 接口。因预售期 15 天，10-01 / 10-08 车次尚未开售，时刻与票价以 2026-09-20 / 09-22 为代理日实抓——普速票价为国家定价可直接采信，G/D 浮动票价下单前请复核。
+  距离：高德驾车路径实测。<br>
+  <b>尚未核实</b>　10-02 直飞实价、西宁 10-01 与 10-08 酒店实价（携程对未登录会话隐藏房价）、机场大巴末班时刻、燃油附加费是否已由 ¥70 上调。<br>
+  <b>纠错</b>　西宁西站自 2014-12-24 起已停办全部客运业务，现在只有<b>西宁站</b>一个客运站，高铁与普速都到这里；曹家堡机场 T2 已暂停营业，走 <b>T3</b>。
+</footer>
+</div>
+
+<script>
+const PEOPLE=[
+ {id:"bj",c:"var(--bj)",av:"京",nm:"北京 A ＋ 北京 B",sub:"2 人 · 同一订单买",tot:2087,n:2,
+  go:{lb:"去程 <em>10-01</em> · 高铁换乘",rt:"<code>G351</code> 北京西 07:55 → 兰州西 14:38　换乘 38 分　<code>D2661</code> → <b>西宁站 16:18</b>",
+      pz:"二等 ¥809 + ¥58 ＝ ¥867 / 人　全程 8h23m",
+      alt:"<b>备选 1</b> <code>Z21</code> 09-30 北京西 19:48 → 10-01 15:02，硬卧 ¥353，省 ¥514 且不占假<br><b>备选 2</b> 10-01 <code>KN5629</code> 大兴 16:20→18:55，¥1,780+120＝¥1,900（火车没抢到时的兜底，2 张同价库存已复核）"},
+  ret:{lb:"返程 <em>10-08</em> · 直飞",rt:"<code>KN5630</code>（共享 MU8088）西宁 20:00 → <b>大兴 22:25</b>",
+      pz:"票面 ¥1,100（4 折）+ ¥120 ＝ ¥1,220 / 人",
+      alt:"<b>备选</b> <code>CA1262</code> 19:55→首都T3 22:20，¥1,290（贵 ¥70 但首都 T3 离市区近 40–60 分钟）<br><b>省钱</b> 10-09 同班 ¥540+120＝¥660，省 ¥560，需多住一晚 + 多请一天假"}},
+
+ {id:"wh",c:"var(--wh)",av:"汉",nm:"武汉",sub:"1 人 · 全队最省",tot:1677,n:1,
+  go:{lb:"去程 <em>10-01</em> · 高铁换乘",rt:"<code>G3901</code> <b>汉口站</b> 07:18 → 西安北 11:41　换乘 44 分　<code>D2657</code> → <b>西宁站 16:48</b>",
+      pz:"二等 ¥435 + ¥262 ＝ ¥697　全程 9h30m",
+      alt:"<b>备选 1</b> <code>Z292</code> 09-30 <b>武昌站</b> 19:09 → 10-01 16:42，硬卧 ¥370，武昌始发配额多<br><b>备选 2</b> <code>G852</code> <b>武汉站</b> 11:45 → 西宁 20:32 一票到底 ¥737，不用换乘但晚到 3h44m"},
+  ret:{lb:"返程 <em>10-08</em> · 直飞",rt:"<code>DR6528</code> 苏南瑞丽 西宁 19:00 → <b>天河 T2</b> 21:25",
+      pz:"票面 ¥860（5.1 折）+ ¥120 ＝ ¥980",
+      alt:"<b>备选</b> <code>CA8284</code> 15:45→天河T3 18:10，¥920（省 ¥60 但 13:00 前要还完车）<br><b>省钱</b> 10-09 同班 ¥510+120＝¥630<br><b>⚠ 单点风险</b> DR6528 之上没有中间档，一旦买不到就直接跳到 ¥1,700"}},
+
+ {id:"nj",c:"var(--nj)",av:"宁",nm:"南京 A ＋ 南京 B",sub:"2 人 · 同一订单买",tot:1819,n:2,
+  go:{lb:"去程 <em>10-01</em> · 高铁直达",rt:"<code>G3177</code> <b>南京南</b> 07:57 → <b>西宁站 18:53</b>　一票到底，不换乘",
+      pz:"二等 ¥882 / 人　全程 10h56m",
+      alt:"<b>备选 1</b> <code>G465</code> 南京南 08:12 → 兰州西 16:25 + <code>D2751</code> 17:21 → 西宁 18:18，¥845，早 35 分钟到、换乘 56 分钟宽裕<br><b>备选 2</b> 10-01 <code>A67754</code> 禄口T1 14:55→17:55，¥1,760+120＝¥1,880（10-01 直飞里唯一没有余票告警的一班）"},
+  ret:{lb:"返程 <em>10-09</em> · 直飞",rt:"<code>QW6052</code> 青岛航空 西宁 12:55 → <b>禄口 T1</b> 15:40",
+      pz:"票面 ¥817（3.5 折）+ ¥120 ＝ ¥937 / 人　需 10-08 在西宁多住一晚",
+      alt:"<b>要当天走</b> 10-08 <code>MU2760</code> 16:15→禄口T2 18:40，¥1,440+120＝¥1,560，但必须 14:45 前还完车<br><b>熬机场</b> 10-08 <code>MU2350</code> 22:40 经西安中转 7h30m → 次日 09:35 到，票面 ¥770（剩 3 张）"}}
+];
+
+const ARRIVE=[
+ {t:"16:18",c:"var(--bj)",w:"北京 A、北京 B",s:"D2661（G351 兰州西换乘）· 西宁站 · 最早"},
+ {t:"16:48",c:"var(--wh)",w:"武汉",s:"D2657（G3901 西安北换乘）· 西宁站"},
+ {t:"18:53",c:"var(--nj)",w:"南京 A、南京 B",s:"G3177 一票到底 · 西宁站 · 最晚"}
+];
+
+const MATRIX=[
+ ["北京 → 西宁","直飞（携程列表实价）","1,170","2,000","1,740","09-30 是断崖日，直飞反而比 10-01 贵 ¥260；便宜票几乎都在大兴"],
+ ["","高铁 G351+D2661","867","867","867","<span class='best'>16:18 到，全天最早</span>；一票到底 G671 是 ¥799 但 21:14 才到"],
+ ["","卧铺 Z21 硬卧","353","353","353","09-30 19:48 发、10-01 15:02 到，夜车不占假"],
+ ["武汉 → 西宁","直飞（携程列表实价）","770","1,280","1,710","10-01 三班全部 ¥1,710 全价零折扣；09-29 只要 ¥770"],
+ ["","高铁 G3901+D2657","697","697","697","<span class='best'>全队最便宜的当天到达方案</span>；从汉口站发车，不是武汉站"],
+ ["","卧铺 Z36 / Z292 硬卧","343 / 370","343 / 370","343 / 370","5 趟 Z 车全部从武昌站发车，无 K / T 直达"],
+ ["南京 → 西宁","直飞（携程列表实价）","870","1,220","1,760","09-29 HO2217 只要 ¥870，两天涨一倍"],
+ ["","高铁 G3177 直达","882","882","882","<span class='best'>唯一一票到底</span>，10h56m；放票即秒"],
+ ["","卧铺 Z304 硬卧","399","399","399","南京站发车（不是南京南），21h16m 最快的一趟"]
+];
+
+const TIERS=[
+ ["省钱版","09-30 夜车卧铺（不占假）","全员 10-09 直飞","5,671","1,134",
+  "10-08 全员在西宁多住一晚（约 ¥500）→ 真实 ¥6,171 / 人均 ¥1,234；且 <b>全员要多请 10-09 周五一天假</b>"],
+ ["均衡版 ★推荐","10-01 高铁当天到","北京武汉 10-08 晚班机，南京 10-09","9,489","1,898",
+  "10-01 白天全在车上 8.5–11 小时；换乘方案要抢两段票；南京 2 人多住一晚"],
+ ["省时版","10-01 全程直飞","10-08 全员直飞","16,930","3,386",
+  "贵 ¥7,441；南京 2 人 10-08 必须 14:45 前还完车，最后半天报废"]
+];
+
+const HIDDEN=[
+ ["返程城内交通","520","北京 KN5630 <b>22:25 落大兴，机场线末班 22:30</b>，取完行李赶不上，夜间打车 ¥180–230；武汉 21:25 落 T2 接驳紧张；南京白天 S1 正常"],
+ ["路上餐食","635","10-01 在车上 8.5–11 小时，高铁盒饭 ¥45–60；南京 G3177 一票到底全程无补给窗口"],
+ ["南京 2 人多住一晚","560","10-08 西宁 1 间房约 ¥400 + 两人餐食 ¥160。原方案标注「不进 AA」，但分摊规则决定谁付钱，不决定钱存不存在"],
+ ["送机用车","310","10-08 晚北京+武汉 3 人一车去曹家堡 ¥100–130；南京 2 人 10-09 单独一趟 ¥110"],
+ ["行李 / 寄特产","400","返程免费托运 20kg，青甘线厚衣服 + 特产大概率超；西宁发顺丰 ¥60–100/件，或逾重 ¥25.7/kg（西宁→武汉）"],
+ ["退改险","200","抢票期间买的兜底机票必须加买，候补兑现时退票落在费率最狠的档"],
+ ["燃油附加费上调风险","250","按 ¥70/段计；四地到西宁全部 >1,300 km，若实际走 ¥120 高档则 5 个返程航段多这么多"]
+];
+
+const PITS=[
+ {c:"var(--stop)",sv:"结构性冲突",t:"10-08 是西宁→南京的运力收缩日",
+  p:"10-07 有 5 班直飞（含 19:20 的 HO2218），10-08 只剩 3 班且最晚 16:15 起飞。「傍晚还完车再飞南京」物理上不成立。两次抓取（21:37、21:50）结果一致。",
+  a:"南京 2 人二选一：把 10-08 还车压到中午赶 16:15（每人多 ¥623），或 10-09 中午飞（每人多一晚住宿 + 多请一天假）。"},
+ {c:"var(--stop)",sv:"必踩",t:"大兴机场线末班 22:30，北京返程赶不上",
+  p:"KN5630 22:25 落大兴，取完托运行李已经 22:45–22:55。大兴到三环 50+ 公里，夜间出租 ¥180–230/车。这笔钱原方案完全没算。",
+  a:"两人拼车分摊约 ¥110/人；或改 CA1262 19:55→首都T3 22:20，票贵 ¥70 但首都机场夜间交通好得多。"},
+ {c:"var(--warn)",sv:"站名陷阱",t:"武汉的三个站不是一回事",
+  p:"G3901 在<b>汉口站</b>、G852 在<b>武汉站</b>、5 趟 Z 卧铺全在<b>武昌站</b>，三站互相打车 30–50 分钟。南京同理：所有高铁在<b>南京南</b>，5 趟普速直达全在<b>南京站</b>。",
+  a:"买票时逐字看站名。武汉那位若住武昌，汉口 07:18 发车意味着 06:00 就要跨江，地铁首班赶不上，得打车。"},
+ {c:"var(--warn)",sv:"负结果",t:"兰州中川机场没有直达西宁的列车",
+  p:"两路 agent 独立验证：12306 查中川机场东站发往西宁的车次为 0；携程火车票查该站到西宁、兰州西、兰州全部返回「共 0 车次」。所谓「飞兰州再一趟车到西宁」实际是<b>飞机 + 城际 + 动车三段</b>，中川到兰州西还有 67.8 公里 / 62 分钟。",
+  a:"兰州中转对武汉、南京都不划算——省的钱被接驳时间和费用吃光。北京只在 09-30 那天划算（省 ¥525–575）。"},
+ {c:"var(--warn)",sv:"价格幻觉",t:"携程价格日历三个城市全部骗人",
+  p:"北京 10-01 日历 ¥1,130 → 实为 22:05 起飞、西安中转 21h35m、次日 23:40 落地。武汉日历 ¥860 → 经北京中转 20h10m。南京日历 ¥1,214 → 西安中转 9h25m 次日 12:10 到。三个都对 10-01 会合毫无意义。",
+  a:"做预算只用当日航班列表里的直飞行。日历价一律当不存在。"},
+ {c:"var(--win)",sv:"意外之喜",t:"全员到西宁站，接站成本为零",
+  p:"推荐方案下没有一个人去机场。更好的是西宁站 <b>B1 出站层就有租车点</b>（一嗨、神州都在），北京 2 人 16:18 到站下楼就能提车。",
+  a:"取车时间订 10-01 17:00。不要为接机提前取车——租车按 24 小时段计费，早取半天就是实打实多付一天。"}
+];
+
+const TL=[
+ {d:"09-16",s:"08:00",hot:1,w:"北京：抢 09-30 的 Z21 硬卧（若走备选）",e:"北京西站 08:00 放票。走推荐方案则跳过这天"},
+ {d:"09-17",s:"08:00",hot:1,w:"三城同时抢 10-01 的高铁票",e:"北京 G351+D2661 / 武汉 G3901+D2657 / 南京 G3177。换乘方案要抢两段，任一段断链整条就废"},
+ {d:"09-17",s:"当天",hot:1,w:"抢不到就立刻买兜底机票",e:"京 ¥1,900 / 武 ¥1,830 / 宁 ¥1,880，并加买退改险。别等——10-01 直飞已在全价档，只会更贵"},
+ {d:"09-24",s:"15:00",hot:1,w:"10-08 车票开售（若有人要坐火车返程）",e:"注意：西宁开往北京最后一班是 15:40，没有傍晚车，返程只能靠飞机"},
+ {d:"09-24",s:"当天",hot:1,w:"锁定返程机票：北京 KN5630、武汉 DR6528、南京 QW6052",e:"武汉 DR6528 是单点故障——它之上没有中间档，直接跳到 ¥1,700"},
+ {d:"09-28",s:"出发前",w:"确认曹家堡 T3、西宁站两个地名写进群公告",e:"T2 已停用、西宁西站已停办客运，按老攻略走会跑错地方"}
+];
+
+/* ---- map ---- */
+const NODES={
+  xn:{n:"西宁",lon:101.78,lat:36.62,big:1,lab:[0,-16,"middle"]},
+  lz:{n:"兰州西",lon:103.77,lat:36.07,lab:[6,16,"start"]},
+  xa:{n:"西安北",lon:108.94,lat:34.38,lab:[0,18,"middle"]},
+  zz:{n:"郑州东",lon:113.78,lat:34.72,lab:[2,-10,"middle"]},
+  bj:{n:"北京西",lon:116.32,lat:39.90,big:1,lab:[10,-8,"start"]},
+  wh:{n:"汉口",lon:114.26,lat:30.62,big:1,lab:[8,14,"start"]},
+  nj:{n:"南京南",lon:118.80,lat:31.97,big:1,lab:[10,4,"start"]}
+};
+const LINES=[
+  {c:"var(--bj)",pts:["bj","lz","xn"],lb:"G351 + D2661 · 8h23m · ¥867"},
+  {c:"var(--wh)",pts:["wh","xa","xn"],lb:"G3901 + D2657 · 9h30m · ¥697"},
+  {c:"var(--nj)",pts:["nj","zz","xa","lz","xn"],lb:"G3177 一票到底 · 10h56m · ¥882"}
+];
+(function(){
+  const NS="http://www.w3.org/2000/svg", W=1000,H=700,PAD=64;
+  const el=(t,a={})=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e};
+  const BB={lon0:99.5,lon1:120.5,lat0:28.8,lat1:41.6};
+  const kx=Math.cos((BB.lat0+BB.lat1)/2*Math.PI/180);
+  const spX=(BB.lon1-BB.lon0)*kx, spY=BB.lat1-BB.lat0;
+  const sc=Math.min((W-PAD*2)/spX,(H-PAD*2)/spY);
+  const oX=(W-spX*sc)/2, oY=(H-spY*sc)/2;
+  const px=l=>oX+(l-BB.lon0)*kx*sc, py=l=>oY+(BB.lat1-l)*sc;
+  const svg=document.getElementById("map");
+  svg.appendChild(el("rect",{x:0,y:0,width:W,height:H,fill:"var(--mapbg)"}));
+  const g=el("g",{stroke:"var(--grat)","stroke-width":"1"});
+  for(let lo=100;lo<=120;lo+=2) g.appendChild(el("line",{x1:px(lo),y1:py(BB.lat1),x2:px(lo),y2:py(BB.lat0),"stroke-dasharray":"1 8"}));
+  for(let la=29;la<=41;la+=2) g.appendChild(el("line",{x1:px(BB.lon0),y1:py(la),x2:px(BB.lon1),y2:py(la),"stroke-dasharray":"1 8"}));
+  svg.appendChild(g);
+  LINES.forEach(L=>{
+    const pts=L.pts.map(k=>[px(NODES[k].lon),py(NODES[k].lat)]);
+    const d=pts.map((p,i)=>(i?"L":"M")+p[0]+" "+p[1]).join(" ");
+    svg.appendChild(el("path",{d,fill:"none",stroke:"var(--mapbg)","stroke-width":"9","stroke-linejoin":"round","stroke-linecap":"round"}));
+    svg.appendChild(el("path",{d,fill:"none",stroke:L.c,"stroke-width":"7","stroke-linejoin":"round","stroke-linecap":"round",opacity:".16"}));
+    svg.appendChild(el("path",{d,fill:"none",stroke:L.c,"stroke-width":"2.6","stroke-linejoin":"round","stroke-linecap":"round"}));
+    for(let i=0;i<pts.length-1;i++){
+      const [x1,y1]=pts[i],[x2,y2]=pts[i+1], a=Math.atan2(y2-y1,x2-x1);
+      svg.appendChild(el("path",{d:"M -5 -3.4 L 3.5 0 L -5 3.4 Z",fill:L.c,
+        transform:`translate(${(x1+x2)/2},${(y1+y2)/2}) rotate(${a*180/Math.PI})`}));
+    }
+  });
+  Object.entries(NODES).forEach(([k,p])=>{
+    const x=px(p.lon), y=py(p.lat);
+    const col = k==="xn" ? "var(--accent)" : (k==="bj"?"var(--bj)":k==="wh"?"var(--wh)":k==="nj"?"var(--nj)":"var(--hub)");
+    if(p.big) svg.appendChild(el("circle",{cx:x,cy:y,r:14,fill:col,opacity:".18"}));
+    svg.appendChild(el("circle",{cx:x,cy:y,r:p.big?6.5:4,fill:p.big?col:"var(--mapbg)",stroke:col,"stroke-width":p.big?1.5:2.2}));
+    const [dx,dy,an]=p.lab;
+    const t=el("text",{x:x+dx,y:y+dy,fill:"var(--ink)","font-size":p.big?"16":"12.5","font-weight":p.big?"700":"500",
+      "text-anchor":an,"font-family":"Noto Serif SC,serif","paint-order":"stroke",stroke:"var(--mapbg)","stroke-width":"4","stroke-linejoin":"round"});
+    t.textContent=p.n; svg.appendChild(t);
+  });
+  LINES.forEach((L,i)=>{
+    const y=H-70+i*22;
+    svg.appendChild(el("line",{x1:60,y1:y-4,x2:88,y2:y-4,stroke:L.c,"stroke-width":"2.6"}));
+    const t=el("text",{x:96,y:y,fill:"var(--ink2)","font-size":"12.5","font-family":"IBM Plex Mono,monospace"});
+    t.textContent=L.lb; svg.appendChild(t);
+  });
+  const t=el("text",{x:W-40,y:64,fill:"var(--ink3)","font-size":"12","text-anchor":"end","font-family":"IBM Plex Mono,monospace"});
+  t.textContent="10-01 · 全员抵达西宁站"; svg.appendChild(t);
+})();
+
+document.getElementById("people").innerHTML=PEOPLE.map(p=>
+ `<div class="pc" style="--c:${p.c}">
+   <div class="ph"><div class="av">${p.av}</div>
+     <div><div class="nm">${p.nm}</div><div class="sub">${p.sub}</div></div>
+     <div class="tot"><b>¥${p.tot.toLocaleString()}</b><i>往返 / 人</i></div></div>
+   <div class="leg"><div class="lb">${p.go.lb}</div><div class="rt">${p.go.rt}</div>
+     <div class="pz">${p.go.pz}</div><div class="alt">${p.go.alt}</div></div>
+   <div class="leg"><div class="lb">${p.ret.lb}</div><div class="rt">${p.ret.rt}</div>
+     <div class="pz">${p.ret.pz}</div><div class="alt">${p.ret.alt}</div></div>
+ </div>`).join("");
+
+document.getElementById("arr").innerHTML=ARRIVE.map(a=>
+ `<div class="row" style="--c:${a.c}"><div class="tm">${a.t}</div>
+   <div class="who">${a.w}<span>${a.s}</span></div></div>`).join("")
+ +`<div class="foot"><b>全员 19:30 前进酒店。</b>取车订 10-01 17:00，北京 2 人到站直接去 B1 提车；
+    第一晚住西宁站片区（出城上 G0611 最近，且南京两位 18:53 到站步行即到）。10-02 出发定 08:30，按最晚到的人排。</div>`;
+
+document.getElementById("matrix").innerHTML=MATRIX.map(r=>
+ `<tr><td>${r[0]}</td><td>${r[1]}</td><td class="n">${r[2]}</td><td class="n">${r[3]}</td><td class="n">${r[4]}</td>
+   <td style="color:var(--ink3);font-size:12.5px">${r[5]}</td></tr>`).join("");
+
+document.getElementById("tiers").innerHTML=TIERS.map(t=>
+ `<tr${t[0].includes("推荐")?' class="tot"':''}><td>${t[0]}</td><td style="font-size:12.5px">${t[1]}</td>
+   <td style="font-size:12.5px">${t[2]}</td><td class="n">${t[3]}</td><td class="n">${t[4]}</td>
+   <td style="color:var(--ink3);font-size:12.5px">${t[5]}</td></tr>`).join("");
+
+let hs=0;
+document.getElementById("hidden").innerHTML=HIDDEN.map(h=>{hs+=+h[1];
+ return `<tr><td>${h[0]}</td><td class="n">${(+h[1]).toLocaleString()}</td>
+   <td style="color:var(--ink3);font-size:12.5px">${h[2]}</td></tr>`}).join("")
+ +`<tr class="tot"><td>隐性成本合计</td><td class="n">${hs.toLocaleString()}</td>
+    <td style="font-weight:400;font-size:12.5px">人均 +¥${Math.round(hs/5)}　→　均衡版真实人均 <b>¥${(1898+Math.round(hs/5)).toLocaleString()}</b></td></tr>`;
+
+document.getElementById("pits").innerHTML=PITS.map(p=>
+ `<div class="cd" style="--c:${p.c}"><div class="sv">${p.sv}</div><h3>${p.t}</h3><p>${p.p}</p>
+   <div class="ac"><b>怎么办</b>${p.a}</div></div>`).join("");
+
+document.getElementById("tl").innerHTML=TL.map(t=>
+ `<div class="tli${t.hot?" hot":""}"><div class="dt">${t.d}<span>${t.s}</span></div>
+   <div class="w">${t.w}<em>${t.e}</em></div></div>`).join("");
+</script>

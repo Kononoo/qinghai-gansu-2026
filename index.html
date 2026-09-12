@@ -1,0 +1,677 @@
+<title>国庆青甘路书</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700;900&family=Noto+Sans+SC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --s1:#D9603F; --s2:#DE8C36; --s3:#C9A82F; --s4:#7E9C61; --s5:#3FA8A2; --s6:#4A82B8; --s7:#96628A;
+  --bg:#F2F4F2; --bg2:#FFFFFF; --sunk:#E4E9E6;
+  --ink:#0F1A1C; --ink2:#42565A; --ink3:#70878A;
+  --line:#CBD6D3; --line2:#DEE6E3;
+  --accent:#B04527; --accent2:#217F7A;
+  --mapbg:#E2E8E4; --grat:#CAD6D1; --water:#AFC9CE;
+  --stop:#B04527; --warn:#9A6B15; --win:#1E7A72;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0B1214; --bg2:#121D20; --sunk:#0A1113;
+  --ink:#E9F1EF; --ink2:#A6BBB9; --ink3:#6F8A88;
+  --line:#26383B; --line2:#1C2C2F;
+  --accent:#E2673E; --accent2:#4FB6B0;
+  --mapbg:#08100F; --grat:#1B2D2F; --water:#12333A;
+  --stop:#E2673E; --warn:#D9A63C; --win:#4FB6B0;
+}}
+:root[data-theme="dark"]{
+  --bg:#0B1214; --bg2:#121D20; --sunk:#0A1113;
+  --ink:#E9F1EF; --ink2:#A6BBB9; --ink3:#6F8A88;
+  --line:#26383B; --line2:#1C2C2F;
+  --accent:#E2673E; --accent2:#4FB6B0;
+  --mapbg:#08100F; --grat:#1B2D2F; --water:#12333A;
+  --stop:#E2673E; --warn:#D9A63C; --win:#4FB6B0;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);
+  font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB",sans-serif;
+  font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1240px;margin:0 auto;padding:0 26px 100px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-variant-numeric:tabular-nums}
+h1,h2,h3,.serif{font-family:"Noto Serif SC","Songti SC",serif;text-wrap:balance;margin:0}
+
+/* masthead */
+.mast{padding:52px 0 0}
+.kicker{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--line);border-radius:3px;overflow:hidden;margin-bottom:26px}
+.kicker span{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.13em;padding:7px 14px;
+  color:var(--ink3);border-right:1px solid var(--line);flex:0 0 auto}
+.kicker span:last-child{border-right:0}
+.kicker span.on{background:var(--accent);color:#fff;font-weight:600}
+h1{font-size:clamp(38px,6.2vw,72px);font-weight:900;letter-spacing:-.02em;line-height:1}
+.dek{font-size:16px;color:var(--ink2);max-width:60ch;margin:18px 0 0}
+.dek b{color:var(--ink);font-weight:500}
+
+.rail{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:34px 0 0;
+  border:1px solid var(--line);border-radius:3px;overflow:hidden;background:var(--bg2)}
+.rail div{padding:16px 18px;border-right:1px solid var(--line2)}
+.rail div:last-child{border-right:0}
+.rail .k{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3)}
+.rail .v{font-family:"IBM Plex Mono",monospace;font-size:26px;font-weight:600;line-height:1.2;margin-top:6px;letter-spacing:-.02em}
+.rail .n{font-size:12px;color:var(--ink3);margin-top:2px}
+
+section{margin-top:70px}
+.sh{display:flex;align-items:baseline;gap:14px;margin-bottom:24px;
+  border-bottom:2px solid var(--ink);padding-bottom:9px}
+.sh .no{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.14em;color:var(--accent)}
+.sh h2{font-size:25px;font-weight:700}
+.sh .nt{margin-left:auto;font-size:12.5px;color:var(--ink3)}
+
+/* fork */
+.fork{border:1px solid var(--line);border-radius:3px;background:var(--bg2);overflow:hidden}
+.fork .top{padding:22px 26px 18px;border-bottom:1px solid var(--line2)}
+.fork .top h3{font-size:19px;font-weight:700;line-height:1.5}
+.fork .top p{margin:8px 0 0;color:var(--ink2);font-size:14px}
+.fork .two{display:grid;grid-template-columns:1fr 1fr}
+.fork .two>div{padding:20px 26px;border-right:1px solid var(--line2)}
+.fork .two>div:last-child{border-right:0}
+.fork .lb{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px}
+.fork .hd{font-family:"IBM Plex Mono",monospace;font-size:14px;font-weight:600;color:var(--ink);line-height:1.6}
+.fork .bd{font-size:13.5px;color:var(--ink2);margin-top:7px}
+.fork .foot{padding:14px 26px;background:var(--sunk);font-size:12.5px;color:var(--ink3);border-top:1px solid var(--line2)}
+@media(max-width:760px){.fork .two{grid-template-columns:1fr}.fork .two>div{border-right:0;border-bottom:1px solid var(--line2)}}
+
+/* route picker */
+.pick{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+@media(max-width:760px){.pick{grid-template-columns:1fr}}
+.opt{position:relative;cursor:pointer;text-align:left;font-family:inherit;color:var(--ink);
+  background:var(--bg2);border:1px solid var(--line);border-radius:3px;padding:18px 20px 16px;
+  transition:border-color .15s,box-shadow .15s}
+.opt:hover{border-color:var(--ink3)}
+.opt:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.opt[aria-selected="true"]{border-color:var(--tone);box-shadow:inset 0 0 0 1px var(--tone)}
+.opt .flagr{position:absolute;top:-1px;right:16px;background:var(--tone);color:#fff;
+  font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.12em;padding:3px 8px;border-radius:0 0 3px 3px}
+.opt .row1{display:flex;align-items:center;gap:10px}
+.opt .chip{width:26px;height:26px;border-radius:3px;background:var(--tone);color:#fff;
+  display:grid;place-items:center;font-family:"Noto Serif SC",serif;font-weight:700;font-size:15px;flex:none}
+.opt .nm{font-family:"Noto Serif SC",serif;font-size:19px;font-weight:700}
+.opt .sb{font-size:12.5px;color:var(--ink3);margin-top:7px}
+.opt .pr{display:flex;align-items:baseline;gap:8px;margin-top:10px;padding-top:10px;border-top:1px solid var(--line2)}
+.opt .pr b{font-family:"IBM Plex Mono",monospace;font-size:22px;font-weight:600;letter-spacing:-.02em}
+.opt .pr i{font-style:normal;font-size:11.5px;color:var(--ink3)}
+.opt .pr u{text-decoration:none;margin-left:auto;font-size:11.5px;color:var(--ink3);font-family:"IBM Plex Mono",monospace}
+
+/* instrument */
+.inst{border:1px solid var(--line);border-radius:3px;overflow:hidden;background:var(--bg2)}
+.mrow{display:grid;grid-template-columns:1fr 300px}
+@media(max-width:960px){.mrow{grid-template-columns:1fr}}
+.mapbox{position:relative;background:var(--mapbg);min-width:0}
+.mapbox svg{display:block;width:100%;height:auto}
+.lgd{position:absolute;left:16px;bottom:14px;display:flex;gap:14px;flex-wrap:wrap;
+  font-family:"IBM Plex Mono",monospace;font-size:10px;color:var(--ink3);letter-spacing:.05em}
+.lgd i{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px;vertical-align:1px}
+.side{border-left:1px solid var(--line);padding:20px;display:flex;flex-direction:column;gap:14px;min-height:380px}
+@media(max-width:960px){.side{border-left:0;border-top:1px solid var(--line)}}
+.side .pn{font-family:"Noto Serif SC",serif;font-size:21px;font-weight:700;line-height:1.25}
+.side .pt{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--tone);margin-top:5px}
+.side dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:14px 0 0;font-size:13px}
+.side dt{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);padding-top:4px}
+.side dd{margin:0}
+.side .nt{font-size:13px;color:var(--ink2);border-top:1px solid var(--line2);padding-top:13px;line-height:1.7}
+.side .hint{margin-top:auto;font-size:12px;color:var(--ink3);border-top:1px dashed var(--line);padding-top:12px}
+.elev{border-top:1px solid var(--line);padding:16px 20px 8px}
+.elev .lb{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink3);margin-bottom:6px;display:flex;gap:16px;flex-wrap:wrap}
+.elev svg{display:block;width:100%;height:auto}
+
+/* days */
+.days{margin-top:26px;border-top:1px solid var(--line)}
+.day{display:grid;grid-template-columns:12px 78px 1fr 132px;gap:0 16px;align-items:stretch;
+  border-bottom:1px solid var(--line2);background:var(--bg2)}
+.day>*{padding:15px 0}
+.day .spine{padding:0}
+.day .sp{width:4px;height:100%;background:var(--dc);margin-left:4px;border-radius:2px}
+.day .tg{padding-left:0}
+.day .dn{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600}
+.day .dd{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink3);margin-top:1px}
+.day .bd .rt{font-size:15px;font-weight:500;line-height:1.6}
+.day .bd .st{font-size:12.5px;color:var(--ink3);margin-top:3px}
+.day .bd .st b{color:var(--ink2);font-weight:500}
+.day .mt{text-align:right;padding-right:16px;font-family:"IBM Plex Mono",monospace;font-size:13px}
+.day .mt .k{font-weight:600}
+.day .mt .h{font-size:11px;color:var(--ink3);margin-top:1px}
+.day.tr{background:var(--sunk)}
+.day.tr .bd .rt{color:var(--ink2)}
+.badge{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.1em;
+  padding:2px 6px;border-radius:2px;margin-left:8px;vertical-align:2px}
+.badge.hard{background:color-mix(in srgb,var(--stop) 16%,transparent);color:var(--stop)}
+.badge.slack{background:color-mix(in srgb,var(--win) 16%,transparent);color:var(--win)}
+@media(max-width:720px){.day{grid-template-columns:12px 66px 1fr}.day .mt{grid-column:3;text-align:left;padding:0 0 14px}}
+
+/* slack */
+.slack{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0;
+  border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.sk{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 20px;background:var(--bg2)}
+.sk .lv{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.14em;
+  padding:2px 8px;border-radius:2px;background:var(--c);color:#fff;font-weight:600}
+.sk h3{font-size:15.5px;font-weight:700;margin:10px 0 6px}
+.sk p{margin:0;font-size:13.5px;color:var(--ink2);line-height:1.7}
+
+/* table */
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:3px;background:var(--bg2)}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:13.5px}
+th,td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--line2)}
+thead th{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink3);font-weight:500;background:var(--sunk);border-bottom:1px solid var(--line)}
+td.n,th.n{text-align:right;font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+tr.tot td{font-weight:700;background:var(--sunk);border-top:2px solid var(--ink);font-size:15px}
+tr.tot td.n{font-family:"IBM Plex Mono",monospace;font-size:19px}
+.est{color:var(--ink3)}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.08em;
+  padding:1px 5px;border:1px solid var(--line);border-radius:2px;color:var(--ink3);margin-left:6px;vertical-align:1px}
+
+/* intel */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:0;
+  border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.card{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 22px 22px;background:var(--bg2)}
+.card .sv{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.16em;font-weight:600;color:var(--c)}
+.card h3{font-size:16.5px;font-weight:700;margin:9px 0 9px;line-height:1.45}
+.card p{margin:0;font-size:13.5px;color:var(--ink2);line-height:1.75}
+.card .ac{margin-top:13px;padding-top:12px;border-top:1px dashed var(--line);font-size:12.5px;color:var(--ink)}
+.card .ac b{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.12em;color:var(--ink3);
+  display:block;margin-bottom:3px;font-weight:500}
+
+/* timeline */
+.tl{border-left:2px solid var(--line);margin-left:9px}
+.tli{display:grid;grid-template-columns:110px 1fr;gap:20px;padding:14px 0 14px 24px;position:relative;
+  border-bottom:1px solid var(--line2)}
+.tli:last-child{border-bottom:0}
+.tli::before{content:"";position:absolute;left:-7px;top:21px;width:12px;height:12px;border-radius:50%;
+  background:var(--bg);border:2px solid var(--ink3)}
+.tli.hot::before{background:var(--accent);border-color:var(--accent)}
+.tli .dt{font-family:"IBM Plex Mono",monospace;font-size:14px;font-weight:600}
+.tli .dt span{display:block;font-size:10.5px;color:var(--ink3);font-weight:400;letter-spacing:.08em}
+.tli .w{font-size:14.5px;font-weight:500}
+.tli .w em{font-style:normal;color:var(--ink3);font-size:12.5px;display:block;margin-top:2px;font-weight:400}
+@media(max-width:620px){.tli{grid-template-columns:1fr;gap:3px}}
+
+footer{margin-top:76px;padding-top:24px;border-top:2px solid var(--ink);font-size:12.5px;color:var(--ink3);line-height:1.85}
+footer b{color:var(--ink2);font-weight:500}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+<header class="mast">
+  <div class="kicker">
+    <span>2026 国庆</span><span>北京集合 · 5 人</span><span>自驾闭环 · 西宁取还</span>
+    <span>游玩 6–7 天</span><span class="on">初步方案 V2</span>
+  </div>
+  <h1>国庆青甘路书</h1>
+  <p class="dek">
+    两条候选路线、一张按天拆解的地图、一份人均成本对照，外加一份<b>弹性清单</b>——哪几格是硬的、哪几格出意外时可以直接砍掉。
+    机票与房价是 2026-09-09 在携程实时列表页抓的到手价，不是价格日历（日历价基本都是中转票，会系统性低估 30%–70%）。
+  </p>
+  <div class="rail">
+    <div><div class="k">游玩天数</div><div class="v">6–7 天</div><div class="n">另留 1 天做缓冲</div></div>
+    <div><div class="k">往返大交通</div><div class="v">¥706 起</div><div class="n">火车硬卧往返 / 人</div></div>
+    <div><div class="k">全环里程</div><div class="v">2,450 km</div><div class="n">日均 350 km</div></div>
+    <div><div class="k">睡眠最高点</div><div class="v">2,986 m</div><div class="n">德令哈（避开大柴旦）</div></div>
+    <div><div class="k">人均</div><div class="v">4.3–6.3k</div><div class="n">视方案而定</div></div>
+  </div>
+</header>
+
+<section>
+  <div class="sh"><span class="no">00</span><h2>先看这个岔路口</h2><span class="nt">它决定选哪条线</span></div>
+  <div class="fork">
+    <div class="top">
+      <h3>西宁没有 10-08 上午回北京的班次，所以「要敦煌」和「10-08 上午到家」不能同时成立。</h3>
+      <p>西宁进京只有两个可用时间点，中间是空的：</p>
+    </div>
+    <div class="two">
+      <div>
+        <div class="lb">路线 1 · 10-07 中午走</div>
+        <div class="hd">Z22　西宁 13:33 → 10-08 08:43 北京西</div>
+        <div class="bd">硬卧 ¥353。10-08 上午到家，下午能上班。但 10-07 中午前必须还完车，地面只剩 <b>6 天</b>——塞不下敦煌。</div>
+      </div>
+      <div>
+        <div class="lb">路线 2 · 10-08 傍晚走</div>
+        <div class="hd">MU8088　西宁 20:00 → 22:25 大兴</div>
+        <div class="bd">¥1,100（4 折）。地面撑到 <b>7 天</b>，敦煌 + 河西走廊全收。代价是 10-08 深夜落地，10-09 上班。</div>
+      </div>
+    </div>
+    <div class="foot">
+      中间的选项都不成立：10-07 晚上飞要 ¥1,900（比 10-08 贵 ¥800/人）；10-08 最早的直飞是 16:00 起飞；10-08 中午的火车 T176 要 10-09 上午才到北京。
+      —— 还有一版「压缩到 7 天但仍走全环」的方案我算过：里程只少 30 km，却要在同一天上午看完莫高窟、下午开 600 km，而且返程机票反而贵 ¥800/人。又累又贵，已弃。
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sh"><span class="no">01</span><h2>两条候选线</h2><span class="nt">点地图上任一圆点看单点信息</span></div>
+  <div class="pick" id="pick"></div>
+  <div class="inst">
+    <div class="mrow">
+      <div class="mapbox">
+        <svg id="map" viewBox="0 0 1000 600" role="img" aria-label="青甘线路线图"></svg>
+        <div class="lgd" id="lgd"></div>
+      </div>
+      <aside class="side" id="side"></aside>
+    </div>
+    <div class="elev">
+      <div class="lb"><span id="elab"></span><span>纵轴 1,000–4,200 m</span><span>横轴按累计里程</span></div>
+      <svg id="prof" viewBox="0 0 1000 180" role="img" aria-label="海拔剖面图"></svg>
+    </div>
+  </div>
+  <div class="days" id="days"></div>
+</section>
+
+<section>
+  <div class="sh"><span class="no">02</span><h2>弹性清单</h2><span class="nt">出意外时按「软 → 中」的顺序砍</span></div>
+  <div class="slack" id="slack"></div>
+</section>
+
+<section>
+  <div class="sh"><span class="no">03</span><h2>人均成本</h2><span class="nt">5 人分摊 · 单位 元</span></div>
+  <div class="tw"><table>
+    <thead><tr><th>分项</th><th class="n">甲 · 完整大环线</th><th class="n">丙 · 青海高原环</th><th>口径</th></tr></thead>
+    <tbody id="budget"></tbody>
+  </table></div>
+  <p style="font-size:13px;color:var(--ink3);margin-top:14px;max-width:76ch">
+    <b style="color:var(--ink2)">租车是唯一没实查的大项</b>：西宁 7 座 GL8 的<em>非国庆</em>挂牌价实抓为 ¥460–999/天（悟空租车，同城不同门店差两倍），
+    国庆按行业口径 +50%~100% 推算为 ¥700–1,200/天，表里取 ¥800 中位。你说这块先不管，那就先按这个数走，订车时以实际报价为准。
+  </p>
+</section>
+
+<section>
+  <div class="sh"><span class="no">04</span><h2>会改写计划的五条情报</h2><span class="nt">全部来自一手来源，非攻略稿</span></div>
+  <div class="cards" id="cards"></div>
+</section>
+
+<section>
+  <div class="sh"><span class="no">05</span><h2>倒排时间线</h2><span class="nt">距出发 21 天</span></div>
+  <div class="tl" id="tl"></div>
+</section>
+
+<footer>
+  <b>数据来源</b>　机票与酒店：2026-09-09 携程实时列表页到手价（单程经济舱最低直飞价 / 1 间 1 成人）。火车票价为国家定价，节假日不浮动。
+  道路施工：青海省交通运输厅逐日路况通报（2026-09-08）。莫高窟规则：敦煌研究院《2026 年莫高窟旅游开放公告》（2026-03-30）。
+  气候：ERA5 再分析 1995–2025 共 31 年统计，是历史规律而非 2026 年预报。<br>
+  <b>尚未核实</b>　国庆期间租车实际总价、5 人同价票余量、各景区现场二次消费。<br>
+  <b>地图</b>　按 WGS84 经纬度等距圆柱投影绘制，路线为示意连线而非实际路径，用于理解相对位置与节奏，不可用于导航。
+</footer>
+</div>
+
+<script>
+/* 青甘线共享数据 — 网页版与图片版共用 */
+/* 坐标 WGS84。lab: 标签偏移与锚点，用于避免密集区重叠。 */
+
+const P = {
+  xining:{n:"西宁",lon:101.778,lat:36.617,alt:2264,t:"起终点",major:1,lab:[12,-10,"start"],
+    note:"环线唯一闭环起点。海拔 2264 m，第一晚务必住这里让身体过夜适应，这比吃任何药都管用。取车还车、手抓羊肉都在这。"},
+  taer:{n:"塔尔寺",lon:101.573,lat:36.492,alt:2600,t:"藏传佛教",lab:[8,16,"start"],
+    note:"格鲁派六大寺之一，酥油花、壁画、堆绣三绝。门票 70 元。距西宁 25 km，17:00 停止售票。"},
+  lajishan:{n:"拉脊山垭口",lon:101.51,lat:36.35,alt:3820,t:"垭口",
+    note:"出西宁后第一个高点，3820 m。不少人在这里第一次感到轻微头晕——垭口不要跑跳。"},
+  riyue:{n:"日月山",lon:100.99,lat:36.42,alt:3520,t:"垭口",
+    note:"农耕与游牧的地理分界，文成公主入藏处。翻过去就是青藏高原。"},
+  daotang:{n:"倒淌河",lon:100.87,lat:36.36,alt:3300,t:"路口",
+    note:"G6 高速下来的关键路口，往西是青海湖，往南是共和。国庆堵点之一。"},
+  erlangjian:{n:"青海湖·二郎剑",sn:"二郎剑",lon:100.50,lat:36.60,alt:3200,t:"湖泊",major:1,lab:[0,-13,"middle"],
+    note:"青海湖官方景区，门票 90 元。注意：国庆期间环湖三条主干道同时半幅施工（G315 北岸、S207 湖东、S208 泉吉—黑马河），别想着环一圈。"},
+  heimahe:{n:"黑马河",lon:99.78,lat:36.72,alt:3200,t:"日出点",lab:[-8,15,"end"],
+    note:"看青海湖日出的经典位置。湖景民宿国庆 ¥713–979 且多数「仅剩 1 间」；住共和县城（¥278）5:30 出发一样赶得上。"},
+  gonghe:{n:"共和县城",lon:100.62,lat:36.28,alt:2870,t:"住宿点",major:1,lab:[10,18,"start"],
+    note:"恰卜恰镇。国庆房价几乎不涨，部分酒店甚至比平季便宜，三人间 ¥100–209。青海湖住宿的性价比正解。"},
+  xiangpi:{n:"橡皮山垭口",lon:99.72,lat:36.63,alt:3817,t:"垭口",
+    note:"黑马河到茶卡之间，3817 m。盘山路，注意大货车。"},
+  chaka:{n:"茶卡盐湖",lon:99.09,lat:36.70,alt:3100,t:"盐湖",major:1,lab:[0,-14,"middle"],
+    note:"天空壹号景区门票 128 元。晴天正午倒影最好，阴天等于白来。住乌兰县城比住景区门口便宜一半。"},
+  wulan:{n:"乌兰",lon:98.48,lat:36.93,alt:2960,t:"住宿点"},
+  delingha:{n:"德令哈",lon:97.36,lat:37.37,alt:2986,t:"住宿点",major:1,lab:[12,5,"start"],
+    note:"海子那首诗的德令哈。海西州最大城市，有三甲医院（海西州人民医院），是柴达木段唯一像样的医疗保障。10 月夜里 54% 概率零下，订房要问清有没有暖气。"},
+  keluke:{n:"可鲁克湖",lon:96.90,lat:37.28,alt:2800,t:"湖泊"},
+  dachaidan:{n:"大柴旦",lon:95.36,lat:37.85,alt:3182,t:"补给点",major:1,lab:[10,-12,"start"],
+    note:"国庆住宿涨 4.26 倍（¥186 → ¥792），全线最猛的一个点。白天刷完翡翠湖就走，别在这过夜。"},
+  feicui:{n:"翡翠湖",lon:95.13,lat:37.72,alt:3100,t:"盐湖",lab:[-10,14,"end"],
+    note:"废弃盐场形成的多彩卤水池，颜色比茶卡更奇特、人少得多。必须戴墨镜，此处紫外线指数 7.8。"},
+  yadan_water:{n:"水上雅丹",lon:93.40,lat:37.55,alt:2700,t:"雅丹",lab:[10,4,"start"],
+    note:"乌素特雅丹，全球唯一水上雅丹地貌。但从大柴旦往返约 400 km，会吃掉一整天——这是甲案砍掉它的原因。"},
+  dongtai:{n:"东台吉乃尔湖",lon:94.15,lat:37.45,alt:2700,t:"湖泊",lab:[4,18,"middle"],
+    note:"孔雀蓝的盐湖，G315 U 型公路网红机位也在这一带。"},
+  dangjinshan:{n:"当金山垭口",lon:94.35,lat:39.15,alt:3648,t:"垭口",lab:[10,4,"start"],
+    note:"青海进甘肃的门户，3648 m。翻过去海拔从 3000 m 直落到敦煌 1141 m，是全程落差最大的一段。G3011 嗷唠山隧道近期通报无照明，别摸黑走。"},
+  aksai:{n:"阿克塞",lon:94.34,lat:39.63,alt:3000,t:"路过"},
+  dunhuang:{n:"敦煌",lon:94.662,lat:40.142,alt:1141,t:"核心",major:1,lab:[-12,-8,"end"],
+    note:"全线唯一的世界级目的地。海拔仅 1141 m，10 月白天 22℃、夜里 8.6℃，是全程最舒服的地方。敦煌国际大酒店 ¥426 含双早、免费取消、到店付。"},
+  mogao:{n:"莫高窟",lon:94.809,lat:40.041,alt:1330,t:"石窟",lab:[12,10,"start"],
+    note:"常规票 238 元看 8 窟 + 数字电影，日限 6000 张；应急票 100 元看 4 窟，日限 12000 张。含提前 30 分钟到场，全程要留满 4.5 小时。"},
+  mingsha:{n:"鸣沙山月牙泉",lon:94.667,lat:40.089,alt:1200,t:"沙漠",
+    note:"门票 110 元。傍晚去，10 月初日落 19:25（比北京晚 1.5 小时），骆驼另收约 100 元。"},
+  yumen:{n:"玉门关",lon:93.06,lat:40.35,alt:1150,t:"关隘"},
+  yadan:{n:"雅丹魔鬼城",lon:93.00,lat:40.50,alt:1100,t:"雅丹",
+    note:"敦煌西线，单程 180 km，要整整一天，观光车另收费。时间不够时这是第一个该砍的。"},
+  guazhou:{n:"瓜州",lon:95.78,lat:40.52,alt:1300,t:"路过"},
+  jiayuguan:{n:"嘉峪关",lon:98.229,lat:39.802,alt:1660,t:"关隘",major:1,lab:[12,-8,"start"],
+    note:"明长城最西端，关城门票 110 元，2 小时足够。这是时间紧张时第二个可砍的点。"},
+  zhangye:{n:"张掖",lon:100.455,lat:38.926,alt:1483,t:"住宿点",major:1,lab:[12,4,"start"],
+    note:"牛肉小饭、搓鱼面。国庆房价涨 1.5–2.2 倍，澜栖国际（4 钻）¥291。"},
+  danxia:{n:"七彩丹霞",lon:100.128,lat:38.925,alt:1800,t:"丹霞",lab:[-10,-10,"end"],
+    note:"门票 93 元 + 景区摆渡车。日落前 1.5 小时光线最好。本页的七色配色就取自这里的岩层。"},
+  biandukou:{n:"扁都口",lon:101.02,lat:38.13,alt:3000,t:"峡谷",
+    note:"祁连山穿越点，走 G0611 高速。官方建议避开 08:00–20:00 的人工疏导时段。"},
+  qilian:{n:"祁连县",lon:100.246,lat:38.177,alt:2736,t:"住宿点",major:1,lab:[-12,4,"end"],
+    note:"「东方小瑞士」。注意：10 月 1–7 日这里 31 年里有 29 年下雪，降雪日占比 42%，夜里 47% 概率零下。"},
+  zhuoer:{n:"卓尔山",lon:100.23,lat:38.20,alt:3300,t:"观景",
+    note:"丹霞 + 草原 + 雪山的组合机位，门票约 60 元 + 观光车。可砍点之一。"},
+  ebao:{n:"峨堡",lon:100.90,lat:37.97,alt:3200,t:"路口",
+    note:"G0611 上的关键路口。经典路书从这里走 G227 下门源——但 G227 已封闭到 2027 年，必须继续走高速经大通回西宁。"},
+  datong:{n:"大通",lon:101.68,lat:36.93,alt:2500,t:"路过"},
+  golmud:{n:"格尔木",lon:94.90,lat:36.40,alt:2800,t:"住宿点",major:1,lab:[10,14,"start"],
+    note:"柴达木盆地南缘。国庆房价几乎不涨甚至更低（凯邦五钻 ¥288，比平季便宜 12%）。"},
+  dulan:{n:"都兰",lon:98.09,lat:36.30,alt:3180,t:"路过"}
+};
+
+const QH_LAKE = [[99.62,36.90],[99.75,37.05],[100.00,37.20],[100.35,37.25],[100.60,37.18],
+                 [100.78,37.05],[100.78,36.90],[100.55,36.78],[100.20,36.68],[99.90,36.68],[99.70,36.78]];
+
+const ROUTES = {
+  A:{
+    key:"A", label:"甲", name:"完整大环线", tone:"1",
+    sub:"8 天 · 2,450 km · 王牌全收", price:"¥6,260", priceNote:"可优化到 5,700",
+    go:"Z21 · 09-30 19:48 北京西 → 10-01 15:02 西宁 · 硬卧 ¥353",
+    ret:"MU8088 · 10-08 20:00 西宁 → 22:25 大兴 · ¥1,100",
+    play:"7 天", recommend:true,
+    nodes:["xining","taer","lajishan","riyue","daotang","gonghe","erlangjian","heimahe","xiangpi","chaka","wulan","delingha","dachaidan","feicui","dangjinshan","aksai","dunhuang","mogao","mingsha","guazhou","jiayuguan","zhangye","danxia","biandukou","qilian","zhuoer","ebao","datong","xining"],
+    prof:[[0,2264],[25,2600],[60,3820],[100,3520],[125,3300],[165,3200],[225,3200],[250,3817],[305,3100],[365,2960],[595,2986],[795,3182],[815,3100],[1005,3648],[1065,3000],[1165,1141],[1245,1200],[1365,1300],[1545,1660],[1765,1483],[1790,1800],[1900,3000],[2010,2736],[2075,3200],[2290,2500],[2450,2264]],
+    days:[
+      {d:"D0",date:"09-30 三",r:"北京西 19:48 · Z21 硬卧",stay:"夜宿列车",km:"—",transit:1,drive:"—"},
+      {d:"D1",date:"10-01 四",r:"15:02 抵西宁 → 取车 → 市区休整",stay:"西宁 2264 m",km:"0",drive:"0h",slack:"缓冲日"},
+      {d:"D2",date:"10-02 五",r:"塔尔寺 → 拉脊山 → 日月山 → 青海湖二郎剑 → 黑马河日落",stay:"共和 2870 m",km:"300",drive:"4.5h"},
+      {d:"D3",date:"10-03 六",r:"黑马河日出 → 橡皮山 → 茶卡盐湖 → 德令哈",stay:"德令哈 2986 m",km:"390",drive:"5h"},
+      {d:"D4",date:"10-04 日",r:"大柴旦翡翠湖 → 当金山垭口 → 阿克塞 → 敦煌",stay:"敦煌 1141 m",km:"570",drive:"6.5h",hard:1},
+      {d:"D5",date:"10-05 一",r:"莫高窟（上午）→ 鸣沙山月牙泉日落",stay:"敦煌",km:"80",drive:"1h",slack:"缓冲日"},
+      {d:"D6",date:"10-06 二",r:"敦煌 → 瓜州 → 嘉峪关关城 → 张掖",stay:"张掖 1483 m",km:"600",drive:"6.5h",hard:1},
+      {d:"D7",date:"10-07 三",r:"七彩丹霞 → 扁都口 → 祁连卓尔山",stay:"祁连 2736 m",km:"330",drive:"4h"},
+      {d:"D8",date:"10-08 四",r:"祁连 → 峨堡 → 大通 → 西宁还车 → 20:00 航班",stay:"22:25 落地大兴",km:"330",drive:"4h",transit:1}
+    ],
+    trade:"日均 350 km，敦煌住两晚，七彩丹霞和卓尔山都有完整时间。唯一代价是 10-08 深夜到家、10-09 要上班。"
+  },
+  C:{
+    key:"C", label:"丙", name:"青海高原环", tone:"5",
+    sub:"7 天 · 2,080 km · 不进甘肃", price:"¥4,320", priceNote:"省下近 2,000",
+    go:"Z21 · 09-30 19:48 北京西 → 10-01 15:02 西宁 · 硬卧 ¥353",
+    ret:"Z22 · 10-07 13:33 西宁 → 10-08 08:43 北京西 · 硬卧 ¥353",
+    play:"6 天",
+    nodes:["xining","taer","lajishan","riyue","gonghe","erlangjian","heimahe","xiangpi","chaka","wulan","delingha","keluke","dachaidan","feicui","dongtai","yadan_water","golmud","dulan","xining"],
+    prof:[[0,2264],[25,2600],[60,3820],[100,3520],[165,3200],[225,3200],[250,3817],[305,3100],[365,2960],[595,2986],[640,2800],[795,3182],[815,3100],[955,2700],[1015,2700],[1290,2800],[1650,3180],[2080,2264]],
+    days:[
+      {d:"D0",date:"09-30 三",r:"北京西 19:48 · Z21 硬卧",stay:"夜宿列车",km:"—",transit:1,drive:"—"},
+      {d:"D1",date:"10-01 四",r:"15:02 抵西宁 → 取车 → 塔尔寺",stay:"西宁 2264 m",km:"50",drive:"1h",slack:"缓冲日"},
+      {d:"D2",date:"10-02 五",r:"拉脊山 → 日月山 → 青海湖二郎剑 → 黑马河日落",stay:"共和 2870 m",km:"280",drive:"4h"},
+      {d:"D3",date:"10-03 六",r:"日出 → 橡皮山 → 茶卡盐湖 → 可鲁克湖 → 德令哈",stay:"德令哈 2986 m",km:"390",drive:"5h"},
+      {d:"D4",date:"10-04 日",r:"翡翠湖 → 东台吉乃尔 → G315 U 型公路 → 水上雅丹",stay:"德令哈（不住大柴旦）",km:"420",drive:"5.5h"},
+      {d:"D5",date:"10-05 一",r:"德令哈 → 格尔木（察尔汗盐湖可选）",stay:"格尔木 2800 m",km:"420",drive:"5h",slack:"缓冲日"},
+      {d:"D6",date:"10-06 二",r:"格尔木 → 都兰 → 青海湖南岸 → 西宁",stay:"西宁，当晚还车",km:"520",drive:"6h",hard:1},
+      {d:"D7",date:"10-07 三",r:"上午西宁市区（东关清真大寺 / 省博）→ 13:33 Z22",stay:"次日 08:43 到北京西",km:"0",drive:"0h",transit:1}
+    ],
+    trade:"唯一能在 10-08 上午到家的方案，人均省近 ¥2,000。地貌很硬，但没有莫高窟、鸣沙山、七彩丹霞、嘉峪关——是「只有风景没有文明」。"
+  }
+};
+
+const BUDGET = [
+  ["往返大交通", 1573, 706, "甲：Z21 硬卧 ¥353 + 10-08 机票 ¥1,100 + 机建燃油 ¥120；丙：火车硬卧往返"],
+  ["租车 + 不计免赔", 1190, 1020, "7 座 MPV，¥800/天 推算，含 ¥50/天 不计免赔", 1],
+  ["油费", 420, 352, "百公里 11 L，¥7.8/L"],
+  ["过路费", 20, 20, "10-01~10-07 高速对 7 座以下免费"],
+  ["住宿", 846, 597, "5 人开 2 间（三人间 + 标间），携程 09-09 实价"],
+  ["门票 + 观光车", 950, 500, "甲含莫高窟 238、嘉峪关 110、七彩丹霞 93"],
+  ["餐饮", 960, 840, "人均 ¥120/天"],
+  ["杂项", 300, 280, "保险、氧气、防晒、停车、应急"]
+];
+
+const SLACK = [
+  {lv:"硬",t:"莫高窟（10-05 上午）",d:"票已在手，时段固定，提前 30 分钟到场，全程 4.5 小时。这一格不能动。",c:"1"},
+  {lv:"硬",t:"10-08 20:00 的返程航班",d:"当天必须 17:00 前回到西宁还完车。祁连→西宁 330 km 走高速约 4 小时，07:30 出发有 5 小时余量。",c:"1"},
+  {lv:"中",t:"D4 大柴旦→敦煌 570 km",d:"全程最长的一天，翻当金山 3648 m。若前一天延误，可砍掉翡翠湖直接走高速，省 1.5 小时。",c:"2"},
+  {lv:"中",t:"D6 敦煌→嘉峪关→张掖 600 km",d:"第二长的一天。嘉峪关关城 110 元、2 小时——这是全程第一个可以整块砍掉的点，砍了当天轻松 2 小时。",c:"2"},
+  {lv:"软",t:"卓尔山（D7）",d:"门票 60 元 + 观光车。祁连遇雨雪（这里 31 年有 29 年国庆下雪）就直接放弃，不影响任何后续。",c:"4"},
+  {lv:"软",t:"敦煌西线雅丹魔鬼城",d:"本方案没排。单程 180 km 要一整天，如果 D5 有富余也塞不下——想去就得砍嘉峪关那天。",c:"4"},
+  {lv:"软",t:"塔尔寺（D2 早）",d:"70 元。10-01 下午到西宁如果顺利可以当天去；D2 早上跳过能给青海湖多留 1 小时。",c:"4"}
+];
+
+const INTEL = [
+  {sev:"路书作废",lv:"stop",t:"G227 达坂山段全封闭到 2027 年",
+   p:"「祁连→门源→达坂山→黑泉水库→西宁」这条经典收尾路，2026-09-08 官方路况显示已拆成 4 段全封闭施工，封闭期到 2027 年 6–7 月，国庆 100% 不通。网上所有 2025 年及以前的青甘路书，最后一天都是错的。",
+   a:"改走张掖 → G0611 张汶高速 → 扁都口 → 祁连 → 峨堡 → 大通 → 西宁，全程高速，7 座及以下国庆免费。"},
+  {sev:"时间黑洞",lv:"stop",t:"环青海湖三条主干道同时施工",
+   p:"G315 北岸（K158+800–K281+540）、S207 湖东（K0–K43）、S208 泉吉—黑马河（K0–K72+700）国庆期间同时半幅施工。这不是天气问题，没法侥幸。",
+   a:"放弃「环湖一圈」。走 G6 京藏到倒淌河，二郎剑或黑马河看一段就折返上高速，只碰一段国道。"},
+  {sev:"住宿陷阱",lv:"warn",t:"大柴旦一晚涨 4.26 倍，别在那过夜",
+   p:"兰欧酒店同房型 09-16 是 ¥186，10-02 是 ¥792。全线涨幅梯度是「小镇 > 河西三城 > 青海县城 > 西宁」。青海湖边黑马河湖景房 ¥979，共和县城汉庭只要 ¥278，价差 3–7 倍，开车 40 分钟一样看得到日出。",
+   a:"按「1 个三人间 + 1 个标间」订 2 间而不是 3 间，住共和不住黑马河，住德令哈不住大柴旦。5 人 6 晚可压到人均 ¥660。"},
+  {sev:"天气",lv:"warn",t:"祁连 31 年里 29 年国庆下雪",
+   p:"ERA5 1995–2025 统计：祁连县降雪日占比 42%、夜间 47% 概率零下；大冬树山垭口一线 29/31 年出现累计降雪。但主线封路极罕见——2025 年国庆青海全省环线主线零降雪封路，管制原因全是施工。",
+   a:"把「垭口会下雪」当默认情况而不是意外。纪律是：不摸黑走垭口、上午 9 点后再翻垭口、日落前（约 19:30）必须到住宿地。不用买防滑链。"},
+  {sev:"省钱杠杆",lv:"win",t:"去程坐火车比坐飞机又早到又便宜",
+   p:"Z21 北京西 09-30 19:48 发 → 10-01 15:02 到西宁，硬卧 ¥353。10-01 最便宜的直飞 MU2444 是 19:15 起飞、21:40 才落地，¥1,740。火车早到 6 小时 38 分，每人便宜 ¥1,387。",
+   a:"09-30 根本没有北京飞西宁的晚班机（全天只有 06:30 / 08:10 / 16:20 三班，¥2,000+）。日历上那个 ¥1,332 是经西安中转票。"}
+];
+
+const TIMELINE = [
+  {d:"09-10",s:"今天起",hot:1,w:"锁共和 / 茶卡的三人间",e:"多家已显示「仅剩 1 间」，且现在还在早鸟价区间"},
+  {d:"09-11",s:"本周内",hot:1,w:"订车 —— 国庆 7 座车会售罄",e:"这是仅次于莫高窟的抢手项。同时确认沿线是否在救援覆盖城市内"},
+  {d:"09-12",s:"本周内",w:"订敦煌 / 张掖 / 祁连的房",e:"全部选「到店付 + 免费取消」档，对冲成本接近 0"},
+  {d:"09-16",s:"08:00",hot:1,w:"抢 09-30 的 Z21 硬卧（北京西 → 西宁）",e:"15 天预售期，北京西站 08:00 起售。5 张连铺要卡点"},
+  {d:"09-21",s:"",w:"开始跟踪 10 天天气预报",e:"10 天以外的逐日预报没有实用价值，21 号才有意义"},
+  {d:"09-24",s:"08:00",hot:1,w:"盯 10-08 的返程机票",e:"现在 ¥1,100 已是 4 折，不会更低。5 张同价票要一次下单"},
+  {d:"09-28",s:"出发前",w:"复核青海交通厅路况页 + 各酒店取消截止时间",e:"确认施工段是否延期、有无新增管制"}
+];
+
+
+const NS="http://www.w3.org/2000/svg";
+const el=(t,a={})=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e};
+const tone=r=>`var(--s${r.tone})`;
+const DC=["var(--s1)","var(--s2)","var(--s3)","var(--s4)","var(--s5)","var(--s6)","var(--s7)"];
+
+const BB={lon0:92.6,lon1:102.4,lat0:36.0,lat1:40.9};
+const W=1000,H=600,PAD=34;
+const kx=Math.cos((BB.lat0+BB.lat1)/2*Math.PI/180);
+const spX=(BB.lon1-BB.lon0)*kx, spY=BB.lat1-BB.lat0;
+const sc=Math.min((W-PAD*2)/spX,(H-PAD*2)/spY);
+const oX=(W-spX*sc)/2, oY=(H-spY*sc)/2;
+const px=l=>oX+(l-BB.lon0)*kx*sc, py=l=>oY+(BB.lat1-l)*sc;
+
+let cur="A";
+
+/* picker */
+const pick=document.getElementById("pick");
+Object.values(ROUTES).forEach(r=>{
+  const b=document.createElement("button");
+  b.className="opt"; b.setAttribute("role","tab"); b.dataset.k=r.key;
+  b.style.setProperty("--tone",tone(r));
+  b.innerHTML=`${r.recommend?'<span class="flagr">推荐</span>':''}
+    <div class="row1"><span class="chip">${r.label}</span><span class="nm">${r.name}</span></div>
+    <div class="sb">${r.sub}　·　游玩 ${r.play}</div>
+    <div class="pr"><b>${r.price}</b><i>/ 人</i><u>${r.priceNote}</u></div>`;
+  b.onclick=()=>sel(r.key);
+  pick.appendChild(b);
+});
+
+function drawMap(){
+  const svg=document.getElementById("map"); svg.innerHTML="";
+  const r=ROUTES[cur], col=tone(r);
+  svg.appendChild(el("rect",{x:0,y:0,width:W,height:H,fill:"var(--mapbg)"}));
+
+  const g=el("g",{stroke:"var(--grat)","stroke-width":"1"});
+  for(let lo=93;lo<=102;lo++) g.appendChild(el("line",{x1:px(lo),y1:py(BB.lat1),x2:px(lo),y2:py(BB.lat0),"stroke-dasharray":"1 7"}));
+  for(let la=36;la<=41;la++) g.appendChild(el("line",{x1:px(BB.lon0),y1:py(la),x2:px(BB.lon1),y2:py(la),"stroke-dasharray":"1 7"}));
+  svg.appendChild(g);
+  for(let lo=94;lo<=102;lo+=2){const t=el("text",{x:px(lo)+4,y:H-9,fill:"var(--ink3)","font-size":"9.5","font-family":"IBM Plex Mono,monospace",opacity:".55"});t.textContent=lo+"°E";svg.appendChild(t)}
+  for(let la=37;la<=40;la++){const t=el("text",{x:7,y:py(la)-5,fill:"var(--ink3)","font-size":"9.5","font-family":"IBM Plex Mono,monospace",opacity:".55"});t.textContent=la+"°N";svg.appendChild(t)}
+
+  svg.appendChild(el("polygon",{points:QH_LAKE.map(p=>px(p[0])+","+py(p[1])).join(" "),
+    fill:"var(--water)",stroke:"var(--grat)","stroke-width":"1"}));
+  const lk=el("text",{x:px(100.25),y:py(36.98),fill:"var(--ink3)","font-size":"11.5","text-anchor":"middle",
+    "font-family":"Noto Serif SC,serif",opacity:".8"}); lk.textContent="青海湖"; svg.appendChild(lk);
+
+  [["柴达木盆地",95.9,36.9],["河西走廊",96.9,39.85],["祁连山脉",99.2,38.62]].forEach(([n,lo,la])=>{
+    const t=el("text",{x:px(lo),y:py(la),fill:"var(--ink3)","font-size":"12","text-anchor":"middle",
+      "letter-spacing":"4",opacity:".38","font-family":"Noto Serif SC,serif"}); t.textContent=n; svg.appendChild(t);
+  });
+
+  // Beijing pointer
+  const by=py(39.55);
+  svg.appendChild(el("path",{d:`M ${px(101.778)+14} ${py(36.617)-10} C ${W-70} ${py(38.6)}, ${W-46} ${py(39.2)}, ${W-58} ${by+4}`,
+    fill:"none",stroke:"var(--ink3)","stroke-width":"1.3","stroke-dasharray":"4 5",opacity:".55"}));
+  let t=el("text",{x:W-12,y:by,fill:"var(--ink2)","font-size":"13","text-anchor":"end","font-family":"Noto Serif SC,serif","font-weight":"700"});
+  t.textContent="北京"; svg.appendChild(t);
+  t=el("text",{x:W-12,y:by+15,fill:"var(--ink3)","font-size":"9.5","text-anchor":"end","font-family":"IBM Plex Mono,monospace"});
+  t.textContent="Z21 · 19h14m"; svg.appendChild(t);
+
+  const seq=r.nodes, pts=seq.map(k=>[px(P[k].lon),py(P[k].lat)]);
+  const pstr=pts.map(p=>p.join(",")).join(" ");
+  svg.appendChild(el("polyline",{points:pstr,fill:"none",stroke:"var(--mapbg)","stroke-width":"8","stroke-linejoin":"round","stroke-linecap":"round"}));
+  svg.appendChild(el("polyline",{points:pstr,fill:"none",stroke:col,"stroke-width":"6","stroke-linejoin":"round","stroke-linecap":"round",opacity:".18"}));
+  svg.appendChild(el("polyline",{points:pstr,fill:"none",stroke:col,"stroke-width":"2.4","stroke-linejoin":"round","stroke-linecap":"round"}));
+
+  for(let i=1;i<pts.length-1;i+=3){
+    const [x1,y1]=pts[i],[x2,y2]=pts[i+1];
+    const a=Math.atan2(y2-y1,x2-x1);
+    svg.appendChild(el("path",{d:"M -4.5 -3 L 3 0 L -4.5 3 Z",fill:col,opacity:".85",
+      transform:`translate(${(x1+x2)/2},${(y1+y2)/2}) rotate(${a*180/Math.PI})`}));
+  }
+
+  seq.forEach((k,i)=>{
+    if(seq.indexOf(k)!==i) return;
+    const p=P[k], x=px(p.lon), y=py(p.lat), maj=!!p.major;
+    const grp=el("g",{tabindex:"0",role:"button","aria-label":p.n,style:"cursor:pointer"});
+    grp.appendChild(el("circle",{cx:x,cy:y,r:14,fill:"transparent"}));
+    if(maj) grp.appendChild(el("circle",{cx:x,cy:y,r:9,fill:col,opacity:".22"}));
+    grp.appendChild(el("circle",{cx:x,cy:y,r:maj?4.8:2.8,fill:maj?col:"var(--mapbg)",stroke:col,"stroke-width":maj?1.4:1.8}));
+    if(p.lab){
+      const [dx,dy,an]=p.lab;
+      const lab=el("text",{x:x+dx,y:y+dy,fill:"var(--ink)","font-size":maj?"13":"11.5",
+        "font-weight":maj?"700":"500","text-anchor":an,"font-family":"Noto Serif SC,serif",
+        "paint-order":"stroke",stroke:"var(--mapbg)","stroke-width":"3.5","stroke-linejoin":"round"});
+      lab.textContent=p.sn||p.n; grp.appendChild(lab);
+    }
+    grp.addEventListener("click",()=>place(k));
+    grp.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();place(k)}});
+    svg.appendChild(grp);
+  });
+
+  document.getElementById("lgd").innerHTML=
+    `<span><i style="background:${col}"></i>${r.label}案 · ${r.name}</span>
+     <span><i style="background:var(--water)"></i>青海湖</span><span>实心点 = 主要城镇</span>`;
+}
+
+function place(k){
+  const p=P[k], r=ROUTES[cur];
+  document.getElementById("side").style.setProperty("--tone",tone(r));
+  document.getElementById("side").innerHTML=
+    `<div><div class="pn">${p.n}</div><div class="pt">${p.t}</div>
+     <dl><dt>海拔</dt><dd class="mono">${p.alt.toLocaleString()} m</dd>
+     <dt>坐标</dt><dd class="mono">${p.lat.toFixed(3)}°N ${p.lon.toFixed(3)}°E</dd></dl>
+     ${p.note?`<div class="nt">${p.note}</div>`:`<div class="nt" style="color:var(--ink3)">途经点，无需停留。</div>`}</div>
+     <div class="hint">点其他圆点继续看，或切换上方方案。</div>`;
+}
+
+function sideDefault(){
+  const r=ROUTES[cur], s=document.getElementById("side");
+  s.style.setProperty("--tone",tone(r));
+  s.innerHTML=`<div><div class="pn">${r.label}｜${r.name}</div><div class="pt">${r.sub}</div>
+    <dl><dt>去程</dt><dd style="font-size:12.5px">${r.go}</dd>
+    <dt>返程</dt><dd style="font-size:12.5px">${r.ret}</dd>
+    <dt>人均</dt><dd class="mono" style="font-size:16px;font-weight:600">${r.price}</dd></dl>
+    <div class="nt">${r.trade}</div></div>
+    <div class="hint">点地图上任一圆点，看该地的海拔、坐标和现场情况。</div>`;
+}
+
+function drawProf(){
+  const svg=document.getElementById("prof"); svg.innerHTML="";
+  const r=ROUTES[cur], col=tone(r);
+  const w=1000,h=180,ml=44,mr=16,mt=16,mb=24;
+  const mx=r.prof[r.prof.length-1][0], A0=1000, A1=4200;
+  const X=k=>ml+(k/mx)*(w-ml-mr), Y=a=>mt+(1-(a-A0)/(A1-A0))*(h-mt-mb);
+
+  [1000,2000,3000,4000].forEach(a=>{
+    svg.appendChild(el("line",{x1:ml,y1:Y(a),x2:w-mr,y2:Y(a),stroke:"var(--line2)","stroke-width":"1"}));
+    const t=el("text",{x:ml-8,y:Y(a)+3.5,fill:"var(--ink3)","font-size":"9","text-anchor":"end","font-family":"IBM Plex Mono,monospace"});
+    t.textContent=(a/1000)+"k"; svg.appendChild(t);
+  });
+  const line=r.prof.map(p=>X(p[0])+","+Y(p[1])).join(" ");
+  svg.appendChild(el("polygon",{points:`${ml},${Y(A0)} ${line} ${X(mx)},${Y(A0)}`,fill:col,opacity:".15"}));
+  svg.appendChild(el("polyline",{points:line,fill:"none",stroke:col,"stroke-width":"2","stroke-linejoin":"round"}));
+  svg.appendChild(el("line",{x1:ml,y1:Y(3500),x2:w-mr,y2:Y(3500),stroke:"var(--stop)","stroke-width":"1","stroke-dasharray":"3 4",opacity:".7"}));
+  let t=el("text",{x:w-mr,y:Y(3500)-5,fill:"var(--stop)","font-size":"9","text-anchor":"end","font-family":"IBM Plex Mono,monospace"});
+  t.textContent="3,500 m 高反警戒线"; svg.appendChild(t);
+
+  let lastX=-99;
+  r.prof.forEach((p,i)=>{
+    const pv=r.prof[i-1], nx=r.prof[i+1];
+    const peak=pv&&nx&&p[1]>pv[1]&&p[1]>nx[1]&&p[1]>=3600;
+    const low=pv&&nx&&p[1]<pv[1]&&p[1]<=nx[1]&&p[1]<1600;
+    if((peak||low)&&X(p[0])-lastX>52){
+      lastX=X(p[0]);
+      svg.appendChild(el("circle",{cx:X(p[0]),cy:Y(p[1]),r:2.4,fill:col}));
+      const tt=el("text",{x:X(p[0]),y:peak?Y(p[1])-8:Y(p[1])+14,fill:"var(--ink2)","font-size":"9.5",
+        "text-anchor":"middle","font-family":"IBM Plex Mono,monospace"});
+      tt.textContent=p[1].toLocaleString(); svg.appendChild(tt);
+    }
+  });
+  for(let k=0;k<=mx;k+=500){
+    const tt=el("text",{x:X(k),y:h-7,fill:"var(--ink3)","font-size":"9","text-anchor":"middle","font-family":"IBM Plex Mono,monospace"});
+    tt.textContent=k===0?"0":(k/1000).toFixed(1)+"k"; svg.appendChild(tt);
+  }
+  document.getElementById("elab").textContent=`海拔剖面 · ${r.label}案 · 全程 ${mx.toLocaleString()} km`;
+}
+
+function drawDays(){
+  const r=ROUTES[cur];
+  document.getElementById("days").innerHTML=r.days.map((d,i)=>{
+    const c=d.transit?"var(--ink3)":DC[(i-1+7)%7];
+    const bg=d.hard?'<span class="badge hard">最长一天</span>':(d.slack?'<span class="badge slack">'+d.slack+'</span>':'');
+    return `<div class="day${d.transit?" tr":""}" style="--dc:${c}">
+      <div class="spine"><div class="sp"></div></div>
+      <div class="tg"><div class="dn">${d.d}</div><div class="dd">${d.date}</div></div>
+      <div class="bd"><div class="rt">${d.r}${bg}</div><div class="st">住 <b>${d.stay}</b></div></div>
+      <div class="mt"><div class="k">${d.km==="—"?"—":d.km+" km"}</div><div class="h">${d.drive} 驾驶</div></div>
+    </div>`}).join("");
+}
+
+function drawSlack(){
+  document.getElementById("slack").innerHTML=SLACK.map(s=>
+    `<div class="sk" style="--c:var(--s${s.c})"><span class="lv">${s.lv}</span>
+     <h3>${s.t}</h3><p>${s.d}</p></div>`).join("");
+}
+
+function drawBudget(){
+  let a=0,c=0;
+  document.getElementById("budget").innerHTML=BUDGET.map(row=>{
+    const [n,va,vc,note,est]=row; a+=va; c+=vc;
+    return `<tr><td>${n}${est?'<span class="tag">推算</span>':''}</td>
+      <td class="n${est?" est":""}">${va.toLocaleString()}</td>
+      <td class="n${est?" est":""}">${vc.toLocaleString()}</td>
+      <td style="color:var(--ink3);font-size:12.5px">${note}</td></tr>`}).join("")
+   +`<tr class="tot"><td>人均合计</td><td class="n">${a.toLocaleString()}</td><td class="n">${c.toLocaleString()}</td>
+      <td style="font-weight:400;color:var(--ink3);font-size:12.5px">预算线 ¥6,000</td></tr>
+     <tr><td style="color:var(--ink3)">5 人总计</td>
+      <td class="n" style="color:var(--ink3)">${(a*5).toLocaleString()}</td>
+      <td class="n" style="color:var(--ink3)">${(c*5).toLocaleString()}</td><td></td></tr>`;
+}
+
+function drawCards(){
+  document.getElementById("cards").innerHTML=INTEL.map(k=>
+    `<div class="card" style="--c:var(--${k.lv})"><div class="sv">${k.sev}</div>
+     <h3>${k.t}</h3><p>${k.p}</p>
+     <div class="ac"><b>怎么办</b>${k.a}</div></div>`).join("");
+}
+
+function drawTL(){
+  document.getElementById("tl").innerHTML=TIMELINE.map(t=>
+    `<div class="tli${t.hot?" hot":""}"><div class="dt">${t.d}<span>${t.s}</span></div>
+     <div class="w">${t.w}<em>${t.e}</em></div></div>`).join("");
+}
+
+function sel(k){
+  cur=k;
+  document.querySelectorAll(".opt").forEach(o=>o.setAttribute("aria-selected",o.dataset.k===k));
+  drawMap(); drawProf(); drawDays(); sideDefault();
+}
+
+sel("A"); drawSlack(); drawBudget(); drawCards(); drawTL();
+</script>
