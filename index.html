@@ -39,6 +39,11 @@
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
   font-size:15px;line-height:1.75;font-weight:400;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(1100px 620px at 12% -8%, color-mix(in oklab,var(--brand) 13%,transparent), transparent 62%),
+    radial-gradient(900px 520px at 96% 2%, color-mix(in oklab,var(--caution) 11%,transparent), transparent 58%),
+    radial-gradient(760px 520px at 62% 108%, color-mix(in oklab,var(--clear) 10%,transparent), transparent 60%)}
 .mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
 
 /* ══ 布局：左目录 + 右正文 ══ */
@@ -80,12 +85,15 @@ body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
 /* ══ 标题层级 ══ */
 h1,h2,h3,h4{margin:0;font-weight:700;letter-spacing:-.015em;line-height:1.25;text-wrap:balance}
 h1{font-size:clamp(27px,6.2vw,42px);line-height:1.12;letter-spacing:-.028em}
-.sec{margin-top:54px;scroll-margin-top:60px}
+.sec{margin-top:62px;scroll-margin-top:60px}
 @media(min-width:1000px){.sec{scroll-margin-top:24px}}
-.sec>.h{display:flex;align-items:baseline;gap:11px;padding-bottom:9px;border-bottom:2px solid var(--ink);margin-bottom:18px}
+.sec>.h{display:flex;align-items:baseline;gap:12px;padding-bottom:11px;position:relative;margin-bottom:20px}
+.sec>.h::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--rule)}
+.sec>.h::before{content:"";position:absolute;left:0;bottom:0;width:56px;height:2px;background:var(--brand);z-index:1}
 .sec>.h .no{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--brand);letter-spacing:.06em}
 .sec>.h h2{font-size:clamp(20px,4.6vw,27px)}
-.sec>.h .hint{margin-left:auto;font-size:11.5px;color:var(--mute);text-align:right;line-height:1.4}
+.sec>.h .hint{margin-left:auto;font-size:11.5px;color:var(--mute);text-align:right;line-height:1.4;font-variant-numeric:tabular-nums}
+@media(max-width:700px){.sec>.h .hint{display:none}}
 h3{font-size:17px;margin:30px 0 10px}
 h3 .n{font-family:var(--mono);font-size:11.5px;color:var(--mute);font-weight:600;margin-right:7px}
 h4{font-size:14.5px;margin:20px 0 8px}
@@ -96,24 +104,31 @@ p{margin:0 0 12px}
 
 /* ══ 页眉 ══ */
 .hero{padding:26px 0 4px}
-.ribbon{height:5px;border-radius:3px;margin-bottom:18px;
+.ribbon{height:3px;border-radius:2px;margin-bottom:20px;opacity:.9;
   background:linear-gradient(90deg,var(--brand) 0%,var(--clear) 34%,var(--caution) 64%,var(--closure) 100%)}
 @media(min-width:1000px){.hero{padding:4px 0 0}}
 .eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
 .hero h1{margin:10px 0 0}
 .hero h1 em{font-style:normal;color:var(--closure)}
-.kpi{display:grid;grid-template-columns:repeat(2,1fr);border:1px solid var(--rule);border-radius:6px;overflow:hidden;margin:22px 0 0;background:var(--surface)}
+.kpi{display:grid;grid-template-columns:repeat(2,1fr);border:1px solid var(--rule2);border-radius:10px;overflow:hidden;margin:24px 0 0;
+  background:var(--surface);box-shadow:0 1px 2px rgba(10,30,40,.04),0 14px 34px -22px rgba(10,30,40,.26)}
 @media(min-width:640px){.kpi{grid-template-columns:repeat(4,1fr)}}
 .kpi div{padding:11px 13px;border-right:1px solid var(--rule2);border-bottom:1px solid var(--rule2)}
 .kpi .k{font-size:11px;color:var(--mute)}
 .kpi .v{font-family:var(--mono);font-size:15.5px;font-weight:700;margin-top:2px;letter-spacing:-.04em;color:var(--brand);white-space:nowrap}
 
 /* ══ 表格（全部真数据） ══ */
-.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--rule);border-radius:6px;background:var(--surface)}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--rule2);border-radius:10px;background:var(--surface);
+  box-shadow:0 1px 2px rgba(10,30,40,.04),0 14px 34px -22px rgba(10,30,40,.30)}
 table{border-collapse:separate;border-spacing:0;width:100%;font-size:13.5px;line-height:1.6}
-th,td{padding:9px 11px;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule2)}
-thead th{position:sticky;top:0;z-index:2;background:var(--soft);font-weight:700;font-size:12.5px;
-  white-space:nowrap;border-bottom:1px solid var(--rule)}
+/* 宽表不压缩，改为横向滚动，保证每格一行读得完 */
+#tSum{min-width:680px} #tVend{min-width:960px} #tCost{min-width:940px} #tTix{min-width:420px}
+#tSum td:nth-child(2),#tSum td:nth-child(3),#tSum th:nth-child(2),#tSum th:nth-child(3){white-space:nowrap}
+#tVend td,#tCost td{min-width:118px}
+#tVend td:first-child,#tCost td:first-child{min-width:150px}
+th,td{padding:11px 13px;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule2)}
+thead th{position:sticky;top:0;z-index:2;background:var(--soft);font-weight:600;font-size:11.5px;letter-spacing:.04em;
+  color:var(--mute);white-space:nowrap;border-bottom:1px solid var(--rule)}
 tbody tr:nth-child(even) td{background:var(--stripe)}
 tbody tr:last-child td{border-bottom:none}
 td.num,th.num{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
@@ -140,13 +155,25 @@ thead .t-fix{z-index:3;background:var(--soft)}
 .vd .src{margin-top:7px;font-size:12.5px;color:var(--body);font-weight:400;line-height:1.7}
 
 /* ══ 地图 ══ */
-.mapbox{margin-top:16px;border:1px solid var(--rule);border-radius:6px;background:var(--surface);overflow:hidden}
-svg.map{display:block;width:100%;height:auto}
+.mapbox{margin-top:16px;border:1px solid var(--rule2);border-radius:10px;background:var(--surface);overflow:hidden;
+  box-shadow:0 1px 2px rgba(10,30,40,.04),0 16px 40px -24px rgba(10,30,40,.32)}
+svg.map{display:block;width:100%;height:auto;cursor:default}
+.rt{transition:opacity .3s ease,stroke-width .3s ease}
+.rt path{transition:stroke-width .3s ease}
+.dashline{stroke-dasharray:3 8;animation:flow 1.4s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-11}}
+@media(prefers-reduced-motion:reduce){.dashline{animation:none}}
+.mstats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--rule2);border-top:1px solid var(--rule2)}
+@media(min-width:620px){.mstats{grid-template-columns:repeat(4,1fr)}}
+.mstats div{background:var(--surface);padding:11px 14px}
+.mstats .k{font-size:11px;color:var(--mute)}
+.mstats .v{font-family:var(--mono);font-size:15px;font-weight:700;margin-top:2px;letter-spacing:-.02em}
 .legend{display:flex;flex-wrap:wrap;gap:6px;padding:10px 12px;border-top:1px solid var(--rule2)}
 .lg{font:600 12px/1 var(--sans);padding:8px 12px;border:1px solid var(--rule);border-radius:4px;background:var(--soft);
   color:var(--mute);cursor:pointer;display:flex;align-items:center;gap:6px;min-height:36px}
 .lg i{width:14px;height:3px;border-radius:2px}
-.lg[aria-pressed="true"]{color:var(--ink);border-color:var(--ink);background:var(--surface)}
+.lg[aria-pressed="true"]{color:var(--surface);border-color:transparent;background:var(--ink)}
+.lg[aria-pressed="true"] i{box-shadow:0 0 0 1px rgba(255,255,255,.5)}
 
 /* ══ 路线 tab ══ */
 .tabs{display:flex;margin-top:8px;border-bottom:1px solid var(--rule);overflow-x:auto;scrollbar-width:none}
@@ -183,7 +210,8 @@ svg.map{display:block;width:100%;height:auto}
 .axis{display:flex;justify-content:space-between;padding:7px 12px 11px;font-family:var(--mono);font-size:10px;color:var(--mute)}
 
 /* ══ 决策控件 ══ */
-.ask{margin-top:20px;border:2px solid var(--ink);border-radius:8px;overflow:hidden;background:var(--surface)}
+.ask{margin-top:22px;border:1px solid var(--rule);border-radius:12px;overflow:hidden;background:var(--surface);
+  box-shadow:0 2px 4px rgba(10,30,40,.05),0 20px 48px -26px rgba(10,30,40,.38)}
 .ask .qh{padding:16px 18px 13px}
 .ask .qh h3{margin:0;font-size:clamp(18px,4.4vw,23px)}
 .ask .qh p{margin:7px 0 0;font-size:13.5px;color:var(--mute)}
@@ -255,15 +283,15 @@ footer a{color:var(--brand)}
 
 <!-- 01 摘要 -->
 <section class="sec" id="s1">
-  <div class="h"><span class="no">01</span><h2>全部方案总览</h2><span class="hint">人均落地价<br>已含全部费用</span></div>
+  <div class="h"><span class="no">01</span><h2>九个方案 · 价格总览</h2><span class="hint">人均落地价 · 已含全部费用</span></div>
   <div class="tw"><table id="tSum"></table></div>
   <p class="scrollhint">← 表格可左右滑动 →</p>
 </section>
 
 <!-- 02 硬事实 -->
 <section class="sec" id="s2">
-  <div class="h"><span class="no">02</span><h2>四条影响选择的事实</h2></div>
-  <p class="lead">这四条会直接影响哪些方案还值得考虑，先看完再看表。</p>
+  <div class="h"><span class="no">02</span><h2>出发前必须知道的四件事</h2></div>
+  <p class="lead">这四条直接决定了哪些方案还值得考虑。</p>
 
   <h3><span class="n">2.1</span>G227 扁都口封到 2027 年 6 月</h3>
   <div class="vd">
@@ -297,7 +325,7 @@ footer a{color:var(--brand)}
 
 <!-- 03 地图 -->
 <section class="sec" id="s3">
-  <div class="h"><span class="no">03</span><h2>路线地图</h2><span class="hint">点图例只看某一条</span></div>
+  <div class="h"><span class="no">03</span><h2>三条线路 · 地图</h2></div>
   <div class="mapbox">
     <svg class="map" viewBox="0 0 660 470" role="img" aria-label="三条候选路线与封路点">
       <path d="M30,120 C150,150 250,120 330,150 C420,185 470,215 545,250" fill="none" stroke="var(--rule)" stroke-width="1" stroke-dasharray="2 5"/>
@@ -308,11 +336,11 @@ footer a{color:var(--brand)}
       </g>
       <g class="rt rt-b" fill="none" stroke="var(--caution)" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round">
         <path d="M599.9,393.3 L499.5,395 L388.6,385 L252.7,318 L95.5,270 L88.1,268.4 L40.6,40.8"/>
-        <path d="M40.6,40.8 C160,140 330,300 599.9,393.3" stroke-dasharray="2 7" stroke-width="2.1" opacity=".7"/>
+        <path d="M40.6,40.8 C160,140 330,300 599.9,393.3" class="dashline" stroke-width="2.1" opacity=".8"/>
       </g>
       <g class="rt rt-a" fill="none" stroke="var(--closure)" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round">
         <path d="M599.9,393.3 L499.5,395 L388.6,385 L216.5,327 L95.5,270 L88.1,268.4 L40.6,40.8 L320.9,74.8 L470.2,162.5 L495.9,162.4"/>
-        <path d="M495.9,162.4 C540,230 570,320 599.9,393.3" stroke-dasharray="2 7" stroke-width="2.1" opacity=".7"/>
+        <path d="M495.9,162.4 C540,230 570,320 599.9,393.3" class="dashline" stroke-width="2.1" opacity=".8"/>
       </g>
       <g>
         <line x1="541" y1="241" x2="530" y2="259" stroke="var(--closure)" stroke-width="3.5" stroke-linecap="round" opacity=".4"/>
@@ -338,6 +366,7 @@ footer a{color:var(--brand)}
         <g><circle cx="479.5" cy="237.3" r="3" fill="var(--mute)"/><text x="474" y="232" fill="var(--mute)" text-anchor="end" font-size="10.5">祁连</text></g>
       </g>
     </svg>
+    <div class="mstats" id="mstats"></div>
     <div class="legend" role="group" aria-label="筛选路线">
       <button class="lg" data-r="all" aria-pressed="true">全部</button>
       <button class="lg" data-r="a" aria-pressed="false"><i style="background:var(--closure)"></i>甲 大环线</button>
@@ -350,39 +379,39 @@ footer a{color:var(--brand)}
 
 <!-- 04 自驾 -->
 <section class="sec" id="s4">
-  <div class="h"><span class="no">04</span><h2>三条自驾线（另有一条不推荐）</h2><span class="hint">净驾驶已按国庆加权<br>高速×1.2 国道×1.4</span></div>
+  <div class="h"><span class="no">04</span><h2>自驾方案 · 逐日行程</h2><span class="hint">净驾驶已按国庆路况加权</span></div>
   <div class="tabs" role="tablist" id="tabs"></div>
   <div id="panes"></div>
 </section>
 
 <!-- 05 跟团 -->
 <section class="sec" id="s5">
-  <div class="h"><span class="no">05</span><h2>六家跟团 · 逐项明细</h2><span class="hint">全部真实内容<br>不用颜色代替文字</span></div>
-  <p class="lead">六家统一<b>不含</b>大交通、莫高窟、中晚餐。下表是每家白纸黑字给出的原话与数字。</p>
+  <div class="h"><span class="no">05</span><h2>跟团方案 · 六家对比</h2></div>
+  <p class="lead">六家统一<b>不含</b>大交通、莫高窟、中晚餐。下面是每家给出的原话与数字。</p>
   <div class="tw"><table id="tVend"></table></div>
   <p class="scrollhint">← 表格可左右滑动，首列固定 →</p>
 
-  <h3><span class="n">5.1</span>寻风的门票与小交通逐项拆价（全场最有用的一张表）</h3>
-  <p class="lead">寻风把门票和小交通逐项拆开报了价——等于同业自己说出了别家「不含景交」到底藏了多少钱。</p>
+  <h3><span class="n">5.1</span>门票与景区小交通，逐项多少钱</h3>
+  <p class="lead">六家里只有寻风把门票和小交通逐项拆开报价，于是别家「不含景交」到底是多少钱，有了参照。</p>
   <div class="tw"><table id="tTix"></table></div>
   <div class="note">A 档(3,180) − C 档(2,580) ＝ <b>¥600</b>，正好等于全部门票＋小交通；B 档 − C 档 ＝ ¥400（门票＋必要小交通）。<b>所以别家那句「不含景区内小交通」，缺口就是每人 ¥400–600，六个人 ¥2,400–3,600。</b>这个数以前只能估，现在有同业定价背书。</div>
 </section>
 
 <!-- 06 算账 -->
 <section class="sec" id="s6">
-  <div class="h"><span class="no">06</span><h2>九个选项 · 费用逐项对照</h2><span class="hint">全队总价，人均已除以 6</span></div>
-  <p class="lead">这张表是用来<b>算钱</b>的。自驾三条是逐项实价相加；跟团六家是「报价 ＋ 它没算的三项」。每一格都能追到 §08 的口径。</p>
+  <div class="h"><span class="no">06</span><h2>费用明细 · 逐项算账</h2><span class="hint">全队总价 · 人均已除以 6</span></div>
+  <p class="lead">自驾三条是逐项实价相加；跟团六家是「团费 ＋ 它没含的三项」。每一格的出处见文末。</p>
   <div class="tw"><table id="tCost"></table></div>
   <p class="scrollhint">← 表格可左右滑动，首列固定 →</p>
 
   <h3><span class="n">6.1</span>同一把尺子</h3>
-  <p class="lead">轴从 ¥0 起<b>不截断</b>——截断会把「只省两百块」这个结论视觉上骗大。超出最低价 ¥2,538 的那一段用斜纹画出来。</p>
+  <p class="lead">横轴从 ¥0 起，斜纹段是比最便宜那条多花的钱。</p>
   <div class="tw" style="overflow-x:visible"><div id="ruler"></div></div>
 </section>
 
 <!-- 07 结论 -->
 <section class="sec" id="s7">
-  <div class="h"><span class="no">07</span><h2>分歧点</h2></div>
+  <div class="h"><span class="no">07</span><h2>怎么选 · 只剩一个问题</h2></div>
   <p class="lead">三条自驾线全部低于任何一家跟团的落地价。但差距很有限：<b>自驾甲线比最便宜的港港只省 ¥204，比唯一持证的寻风 A 档省 ¥504。</b>这点钱换的是——跟团那边不用自己开 1,857 公里、不用订五晚房、不用抢莫高窟票、司机熟路、持证可查、含个人意外险；自驾这边随时停车、想拍就拍、不进购物店、不被赶时间。</p>
   <div class="ask">
     <div class="qh"><h3>所以真正要回答的只有一个问题</h3><p>六个人里，有没有人愿意连开六天山路？</p></div>
@@ -400,14 +429,14 @@ footer a{color:var(--brand)}
 
 <!-- 08 行动 -->
 <section class="sec" id="s8">
-  <div class="h"><span class="no">08</span><h2>今天起该做的六件事</h2></div>
+  <div class="h"><span class="no">08</span><h2>行动清单 · 六件事</h2></div>
   <div id="acts"></div>
   <div id="countdown" style="padding-top:14px;font-size:12.5px;color:var(--mute);line-height:2.1"></div>
 </section>
 
 <!-- 09 口径 -->
 <section class="sec" id="s9">
-  <div class="h"><span class="no">09</span><h2>口径与来源</h2><span class="hint">含三处未验证</span></div>
+  <div class="h"><span class="no">09</span><h2>数据来源与口径</h2></div>
   <p class="lead">人均 ＝ 全队总价 ÷ 6，<b>不含各自往返西宁的大交通</b>。</p>
   <button class="btn" id="expandAll">全部展开（方便在微信里搜索）</button>
   <div id="srcs"></div>
@@ -607,8 +636,9 @@ document.getElementById('expandAll').addEventListener('click',function(){
 });
 
 /* ── 目录 ── */
-var SECS=[['s1','01','全部方案总览'],['s2','02','四条影响选择的事实'],['s3','03','路线地图'],['s4','04','三条自驾线'],
-          ['s5','05','六家跟团 · 逐项明细'],['s6','06','九个选项 · 费用逐项对照'],['s7','07','分歧点'],['s8','08','今天起该做的六件事'],['s9','09','口径与来源']];
+var SECS=[['s1','01','九个方案 · 价格总览'],['s2','02','出发前必须知道的四件事'],['s3','03','三条线路 · 地图'],
+          ['s4','04','自驾方案 · 逐日行程'],['s5','05','跟团方案 · 六家对比'],['s6','06','费用明细 · 逐项算账'],
+          ['s7','07','怎么选 · 只剩一个问题'],['s8','08','行动清单 · 六件事'],['s9','09','数据来源与口径']];
 var toc=document.getElementById('toc'),mnav=document.getElementById('mnav');
 SECS.forEach(function(s){
   toc.appendChild(el('<li><a href="#'+s[0]+'" data-s="'+s[0]+'"><span class="no">'+s[1]+'</span>'+s[2]+'</a></li>'));
@@ -632,17 +662,41 @@ function spy(){
 addEventListener('scroll',function(){if(tick)return;tick=true;requestAnimationFrame(function(){spy();tick=false})},{passive:true});
 spy();
 
-/* ── 地图筛选 ── */
+/* ── 地图：筛选 + 信息条 + 与逐日行程联动 ── */
+var MSTAT={
+ all:[['三条线','全部显示'],['里程范围','1,355–1,857 km'],['人均范围','¥2,538–3,076'],['共同起终点','西宁']],
+ a:[['甲 完整大环线','6 天 5 晚'],['自驾里程','1,857 km'],['人均','¥3,076'],['收尾','张掖西站还车 · 动车回']],
+ b:[['乙 敦煌深度','6 天 5 晚'],['自驾里程','1,355 km'],['人均','¥2,847'],['收尾','敦煌还车 · 动车回']],
+ c:[['丙 纯青海闭环','6 天 5 晚'],['自驾里程','1,548 km'],['人均','¥2,538'],['收尾','西宁还车 · 全程自驾']]
+};
+var mstats=document.getElementById('mstats');
+function drawStats(k){
+  mstats.innerHTML=MSTAT[k].map(function(x){
+    return '<div><div class="k">'+x[0]+'</div><div class="v">'+x[1]+'</div></div>';
+  }).join('');
+}
 var lgs=[].slice.call(document.querySelectorAll('.lg'));
-lgs.forEach(function(b){b.addEventListener('click',function(){
-  var k=b.dataset.r;
+function setRoute(k,syncTab){
   lgs.forEach(function(x){x.setAttribute('aria-pressed',String(x.dataset.r===k))});
   ['a','b','c'].forEach(function(r){
     var g=document.querySelector('.rt-'+r); if(!g)return;
     var on=(k==='all'||k===r);
-    g.style.opacity=on?'1':'0.1'; g.style.strokeWidth=(k===r)?'3.4':'2.6';
+    g.style.opacity=on?'1':'0.12';
+    g.querySelectorAll('path').forEach(function(pp){pp.setAttribute('stroke-width',(k===r)?'3.6':'2.6')});
   });
-})});
+  drawStats(k);
+  if(syncTab&&k!=='all'){
+    var t=document.getElementById('tab-'+k); if(t) t.click();
+  }
+}
+lgs.forEach(function(b){b.addEventListener('click',function(){setRoute(b.dataset.r,true)})});
+// 直接点地图上的线也能选中
+['a','b','c'].forEach(function(r){
+  var g=document.querySelector('.rt-'+r); if(!g)return;
+  g.style.cursor='pointer';
+  g.addEventListener('click',function(){setRoute(r,true)});
+});
+setRoute('all',false);
 
 /* ── 决策 ── */
 var ANS={
