@@ -226,8 +226,6 @@ svg.map{display:block;width:100%;height:auto;cursor:default}
 .answer[hidden]{display:none}
 .answer .big{font-size:clamp(17px,4.2vw,21px);font-weight:700;line-height:1.4}
 .answer p{margin:8px 0 0;font-size:13.5px;color:var(--body)}
-.copy{margin-top:12px;font:600 13.5px/1 var(--sans);padding:12px 18px;border:1px solid var(--ink);border-radius:6px;
-  background:var(--ink);color:var(--ground);cursor:pointer;min-height:44px}
 
 /* ══ 清单 ══ */
 .act{display:grid;grid-template-columns:28px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--rule2)}
@@ -422,7 +420,6 @@ footer a{color:var(--brand)}
     </div>
     <div class="answer" id="ans" hidden>
       <div class="big" id="ansT"></div><p id="ansP"></p>
-      <button class="copy" id="copyBtn">复制成一句话，发群里</button>
     </div>
   </div>
 </section>
@@ -700,9 +697,9 @@ setRoute('all',false);
 
 /* ── 决策 ── */
 var ANS={
- two:['走自驾甲线 · 人均 ¥3,076','有两个司机换着开，1,857 公里就不是问题。甲线是六天里唯一同时拿到敦煌和七彩丹霞的排法，而且比最便宜的跟团还省 ¥204。马上做两件事：一嗨锁一台 7 座（9/30 前免费取消），订大柴旦的房。','我们六个人定了：走自驾甲线，人均约3076元。有两个人能换着开车。今天要做的：①抢莫高窟应急票 ②一嗨锁一台7座MPV（9/30前可免费退）③订大柴旦的房，那站最容易爆房。'],
- one:['自驾丙线 ¥2,538，或寻风 A 档 ¥3,580','只有一个司机就别碰甲线——它有两天在 6 小时以上，连开六天风险太大。要么走丙线（没有一天超 6 小时，也最便宜），要么干脆交给寻风，多花 ¥1,042 买一个司机和全套安排。','我们六个人在纠结：只有一个人能开车。两个选择——自驾丙线（纯青海，没有敦煌，人均2538，没有一天开超6小时），或者跟寻风A档（人均约3580，含全部门票景交，唯一在青海省名录查得到的旅行社）。'],
- none:['寻风 A 档 · 人均约 ¥3,580','没人愿意开就别自驾，这题到此结束。六家里选寻风：唯一在青海省名录查得到（L-QH-100489）、唯一逐城具名酒店、唯一含个人意外险、唯一把门票景交拆开报价。先打 0971-3598024 验人，并要 6 天 5 晚的报价而不是它默认报的 5 天 4 晚。','我们六个人定了：不自驾，跟寻风A档，人均约3580元。理由：六家里只有它在青海省文旅厅名录查得到（L-QH-100489），也只有它逐城写明酒店名和星级、含个人意外险。下一步打0971-3598024验人，并要6天5晚的报价。']
+ two:['走自驾甲线 · 人均 ¥3,076','有两个司机换着开，1,857 公里就不是问题。甲线是六天里唯一同时拿到敦煌和七彩丹霞的排法，而且比最便宜的跟团还省 ¥204。马上做两件事：一嗨锁一台 7 座（9/30 前免费取消），订大柴旦的房。'],
+ one:['自驾丙线 ¥2,538，或寻风 A 档 ¥3,580','只有一个司机就别碰甲线——它有两天在 6 小时以上，连开六天风险太大。要么走丙线（没有一天超 6 小时，也最便宜），要么干脆交给寻风，多花 ¥1,042 买一个司机和全套安排。'],
+ none:['寻风 A 档 · 人均约 ¥3,580','没人愿意开就别自驾，这题到此结束。六家里选寻风：唯一在青海省名录查得到（L-QH-100489）、唯一逐城具名酒店、唯一含个人意外险、唯一把门票景交拆开报价。先打 0971-3598024 验人，并要 6 天 5 晚的报价而不是它默认报的 5 天 4 晚。']
 };
 var opts=[].slice.call(document.querySelectorAll('.opt')),pick=null;
 var ans=document.getElementById('ans'),ansT=document.getElementById('ansT'),ansP=document.getElementById('ansP');
@@ -710,17 +707,7 @@ opts.forEach(function(o){o.addEventListener('click',function(){
   pick=o.dataset.a;
   opts.forEach(function(x){x.setAttribute('aria-pressed',String(x===o))});
   ansT.textContent=ANS[pick][0];ansP.textContent=ANS[pick][1];ans.hidden=false;
-  try{history.replaceState(null,'','#a='+pick)}catch(e){}
 })});
-document.getElementById('copyBtn').addEventListener('click',function(){
-  if(!pick)return;
-  var t=ANS[pick][2]+'\n完整方案：'+location.href.split('#')[0],btn=this;
-  function done(){btn.textContent='已复制 ✓';setTimeout(function(){btn.textContent='复制成一句话，发群里'},1800)}
-  function fb(){var ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';
-    document.body.appendChild(ta);ta.select();try{document.execCommand('copy');done()}catch(e){btn.textContent='请长按选中复制'}document.body.removeChild(ta)}
-  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,fb)}else fb();
-});
-(function(){var m=/a=(two|one|none)/.exec(location.hash);if(m){var b=document.querySelector('.opt[data-a="'+m[1]+'"]');if(b)b.click()}})();
 </script>
 </body>
 </html>
